@@ -1,0 +1,12 @@
+h1 Тикеты
+
+= link_to 'Новый тикет', new_admin_ticket_path, class: 'btn float-right btn-outline-success '
+table.table
+  thead
+    tr
+      th scope="col"  #
+      th scope="col"  Заголовок
+      th scope="col"  Email
+      th scope="col"  Дата создания
+  tbody
+    =render @Tickets

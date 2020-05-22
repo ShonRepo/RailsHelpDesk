@@ -1,0 +1,15 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  = link_to 'HelpDesk', admin_root_path, class: 'navbar-brand'
+  button.navbar-toggler aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+  #navbarNavAltMarkup.collapse.navbar-collapse
+    .navbar-nav
+      - @main_menu.each do |item, options|
+          //a.nav-item.nav-link.active href=admin_root_path
+          //  | Домой
+          //  span.sr-only (current)
+          li class=(options[:active] ? 'active' :'')
+            = link_to options[:name], options[:path], class: 'nav-item nav-link'
+          //a.nav-item.nav-link href="#"  пользователи
+  li.dropdown
+    a.dropdown href="#" войти
