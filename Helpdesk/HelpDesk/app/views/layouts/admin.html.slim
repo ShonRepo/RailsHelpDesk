@@ -11,6 +11,13 @@ html
     = render 'admin/shared/main_menu'
 
     .container
+      - if current_admin
+        .row
+          ol.breadcrumb
+            = render_breadcrumbs tag: :li, separator: "-/-"
+      .row
+        .col-md-12
+          = render_flash
       .row
         .col-md-12
           = yield

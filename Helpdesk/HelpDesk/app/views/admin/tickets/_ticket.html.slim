@@ -1,5 +1,12 @@
 tr
-  td= ticket.id
+  td= ticket.uuid
   td= ticket.title
   td= ticket.email
-  td= ticket.created_at
+  td= ticket.updated_at
+  td
+    .btn-group role="group"
+      = link_to [ :edit, :admin, ticket ], class: 'btn btn-outline-primary btn-sm'
+        = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
+
+      = link_to  [ :admin, ticket ], class: 'btn btn-outline-danger btn-sm',data: {confirm: "хотите удалить '#{ticket.title}'"}, method: :delete
+        = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"

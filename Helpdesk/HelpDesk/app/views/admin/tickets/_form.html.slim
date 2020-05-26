@@ -1,7 +1,9 @@
 = simple_form_for [:admin,@Ticket ] do |f|
+
   = f.input :title ,label: 'Проблема'
   = f.input :email
   = f.input :body , label: 'Опишите проблему'
   .btn_box
-    = f.button :submit, 'Добавить', class: 'btn btn-outline-success'
-    = link_to 'Отмена', admin_tickets_path, class: 'btn btn-outline-danger'
+    = f.button :submit, 'Сохранить', class: 'btn btn-outline-success'
+    = link_to 'Отмена', admin_tickets_path, class: 'btn btn-light'
+    = link_to 'Удалить' ,[ :admin, @Ticket ], class: 'btn btn-outline-danger',data: {confirm: "хотите удалить  '#{@Ticket.title}'"}, method: :delete if @Ticket.persisted?

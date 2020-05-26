@@ -1,36 +1,58 @@
 class Admin::TicketsController < Admin::BaseController
-  def show
-  end
+  before_action :set_ticket, only: [:edit, :update, :destroy]
+  add_breadcrumb "тикеты", :admin_tickets_path
 
   def index
-    @Tickets = Ticket.all
+    @Tickets = Ticket.order(updated_at: :desc).page params[:page]
   end
 
   def new
       @Ticket = Ticket.new
+      add_breadcrumb "новый тикет", new_admin_ticket_path, title: 'Тикеты'
   end
 
   def create
     @Ticket = Ticket.new(ticket_params)
-  
+    @Ticket[:uuid] = SecureRandom.hex(10)
     if@Ticket.save
-      redirect_to admin_tickets_path, notice: 'Тикет успешно создал'
+      redirect_to admin_tickets_path, notice: 'Тикет успешно создан'
     else
-      flash.now[:alert] = 'Ошибка'
+      add_breadcrumb "новый тикет", new_admin_ticket_path, title: 'Тикеты'
+      flash.now[:alert] = 'не удаось создать тикет'
       render :new
     end
   end
 
   def edit
+    add_breadcrumb "изменить '#{@Ticket.title}'"  ,[:edit, :admin, @Ticket ]
+
   end
 
   def update
+    if@Ticket.update(ticket_params)
+      redirect_to admin_tickets_path, notice: 'Тикет успешно изменен'
+    else
+      add_breadcrumb "изменить '#{@Ticket.title}'"  , [:edit, :admin, @Ticket ]
+      flash.now[:alert] = 'не удалось изменить тикет'
+      render :edit
+    end
   end
 
   def destroy
+    if @Ticket.destroy
+      redirect_to admin_tickets_path, notice: 'тикет удален'
+    else
+      redirect_to admin_tickets_path, alert: 'не удалось'
+
+    end
   end
 
   private
+
+  def set_ticket
+    @Ticket = Ticket.find(params[:id])
+  end
+
   def set_active_main_menu_item
     @main_menu[:tickets][:active] = true
   end

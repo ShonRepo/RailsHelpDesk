@@ -1,0 +1,13 @@
+tr
+  td= admin.id
+  td= admin.first_name
+  td= admin.last_name
+  td= admin.email
+  td= admin.last_sign_in_at
+  td
+    .btn-group role="group"
+      = link_to [ :edit, :admin, admin ], class: 'btn btn-outline-primary btn-sm'
+        = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
+
+      = link_to  [ :admin, admin ], class: 'btn btn-outline-danger btn-sm',data: {confirm: "хотите удалить '#{admin.last_name}'"}, method: :delete
+        = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"

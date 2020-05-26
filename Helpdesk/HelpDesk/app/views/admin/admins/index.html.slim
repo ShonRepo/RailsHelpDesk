@@ -1,0 +1,18 @@
+h1 Администраторы
+
+
+= link_to 'Новый администратор', new_admin_admin_path, class: 'btn float-right btn-outline-success '
+table.table
+  thead
+    tr
+      th scope="col"  #
+      th scope="col"  имя
+      th scope="col"  фамилия
+      th scope="col"  Email
+      th scope="col"  Дата входа
+      th scope="col"
+  tbody
+    =render @Admins
+= paginate @Admins, theme: 'twitter-bootstrap-4',
+                    pagination_class: "pagination-sm",
+                   nav_class: "d-inline-b"

@@ -4,12 +4,23 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     span.navbar-toggler-icon
   #navbarNavAltMarkup.collapse.navbar-collapse
     .navbar-nav
-      - @main_menu.each do |item, options|
-          //a.nav-item.nav-link.active href=admin_root_path
-          //  | Домой
-          //  span.sr-only (current)
-          li class=(options[:active] ? 'active' :'')
-            = link_to options[:name], options[:path], class: 'nav-item nav-link'
-          //a.nav-item.nav-link href="#"  пользователи
-  li.dropdown
-    a.dropdown href="#" войти
+      - if current_admin
+        - @main_menu.each do |item, options|
+            //a.nav-item.nav-link.active href=admin_root_path
+            //  | Домой
+            //  span.sr-only (current)
+            li class=(options[:active] ? 'active' :'')
+              = link_to options[:name], options[:path], class: 'nav-item nav-link'
+            //a.nav-item.nav-link href="#"  пользователи
+  ul.nav.navbar-nav.navbar-right
+    - if !current_admin
+      li.dropdown
+        a.dropdown href="#" войти
+    - if current_admin
+        li.dropdown
+          a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+            | #{current_admin.first_name} #{current_admin.last_name}
+            span.caret
+          ul.dropdown-menu
+            li
+              = link_to 'Выйти', destroy_admin_session_path, method: :delete

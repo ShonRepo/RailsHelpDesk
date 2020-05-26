@@ -1,5 +1,6 @@
 h1 Тикеты
 
+
 = link_to 'Новый тикет', new_admin_ticket_path, class: 'btn float-right btn-outline-success '
 table.table
   thead
@@ -7,6 +8,10 @@ table.table
       th scope="col"  #
       th scope="col"  Заголовок
       th scope="col"  Email
-      th scope="col"  Дата создания
+      th scope="col"  Дата изменения
+      th scope="col"
   tbody
     =render @Tickets
+= paginate @Tickets, theme: 'twitter-bootstrap-4',
+                    pagination_class: "pagination-sm",
+                   nav_class: "d-inline-b"
