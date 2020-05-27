@@ -2,8 +2,6 @@ class Admin::AdminsController < Admin::BaseController
   before_action :set_admin, only: [:edit, :update, :destroy]
   add_breadcrumb "Администраторы", :admin_admins_path
 
-
-
   def index
     @Admins = Admin.order(updated_at: :desc).page params[:page]
   end
@@ -25,8 +23,10 @@ class Admin::AdminsController < Admin::BaseController
     end
   end
 
+  
+
   def edit
-    add_breadcrumb "изменить '#{@Admin.last_name}'"  ,[:edit, :admin, @Admin ]
+    breadcrumb_update
 
   end
 
@@ -34,7 +34,7 @@ class Admin::AdminsController < Admin::BaseController
     if@Admin.update(admin_params)
       redirect_to admin_admins_path, notice: 'Администратор успешно изменен'
     else
-      add_breadcrumb "изменить '#{@Admin.last_name}'"  , [:edit, :admin, @Admin ]
+      breadcrumb_update
       flash.now[:alert] = 'не удалось изменить Администратора'
       render :edit
     end
@@ -51,6 +51,10 @@ class Admin::AdminsController < Admin::BaseController
 
   private
 
+  def breadcrumb_update
+    add_breadcrumb "изменить '#{@Admin.decorate.full_name}'"  , [:edit, :admin, @Admin ]
+  end
+
   def set_admin
     @Admin = Admin.find(params[:id])
   end
@@ -62,4 +66,6 @@ class Admin::AdminsController < Admin::BaseController
   def admin_params
     params.require(:admin).permit(:last_name,:email,:first_name,:password,:password_confirmation)
   end
+
+
 end

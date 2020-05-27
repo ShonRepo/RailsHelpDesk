@@ -1,0 +1,11 @@
+.card
+  h1 Тикет: #{@Ticket.title}
+
+  h2 Тип: #{@Ticket.type.name}
+  h6 подробная информация
+  .card
+    .overflow-auto
+      p #{@Ticket.body}
+  = render 'admin/answers/answerform'
+
+  = render @Ticket.answers

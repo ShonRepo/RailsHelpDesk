@@ -2,6 +2,7 @@
 
   = f.input :title ,label: 'Проблема'
   = f.input :email
+  = f.association :type, collection: Type.all.decorate, label_method: :type_number, label: 'Тип'
   = f.input :body , label: 'Опишите проблему'
   .btn_box
     = f.button :submit, 'Сохранить', class: 'btn btn-outline-success'

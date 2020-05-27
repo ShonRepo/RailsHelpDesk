@@ -25,15 +25,14 @@ class Admin::TypesController < Admin::BaseController
   end
 
   def edit
-    add_breadcrumb "изменить '#{@Type.name}'"  ,[:edit, :admin, @Type ]
-
+    breadcrumb_update
   end
 
   def update
     if@Type.update(type_params)
       redirect_to admin_types_path, notice: 'тип успешно изменен'
     else
-      add_breadcrumb "изменить '#{@Type.name}'"  , [:edit, :admin, @Type ]
+      breadcrumb_update
       flash.now[:alert] = 'не удалось изменить тип'
       render :edit
     end
@@ -50,6 +49,10 @@ class Admin::TypesController < Admin::BaseController
 
   private
 
+  def breadcrumb_update
+    add_breadcrumb "изменить '#{@Type.name}'"  ,[:edit, :admin, @Type ]
+  end
+
   def set_type
     @Type = Type.find(params[:id])
   end
@@ -61,4 +64,5 @@ class Admin::TypesController < Admin::BaseController
   def type_params
     params.require(:type).permit(:name)
   end
+
 end

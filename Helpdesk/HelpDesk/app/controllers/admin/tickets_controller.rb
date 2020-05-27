@@ -1,5 +1,5 @@
 class Admin::TicketsController < Admin::BaseController
-  before_action :set_ticket, only: [:edit, :update, :destroy]
+  before_action :set_ticket, only: [:edit, :update, :destroy,:show]
   add_breadcrumb "тикеты", :admin_tickets_path
 
   def index
@@ -23,8 +23,12 @@ class Admin::TicketsController < Admin::BaseController
     end
   end
 
+  def show
+    add_breadcrumb "'#{@Ticket.title}'"  , [ :admin, @Ticket ]
+  end
+
   def edit
-    add_breadcrumb "изменить '#{@Ticket.title}'"  ,[:edit, :admin, @Ticket ]
+    breadcrumb_update
 
   end
 
@@ -32,7 +36,7 @@ class Admin::TicketsController < Admin::BaseController
     if@Ticket.update(ticket_params)
       redirect_to admin_tickets_path, notice: 'Тикет успешно изменен'
     else
-      add_breadcrumb "изменить '#{@Ticket.title}'"  , [:edit, :admin, @Ticket ]
+      breadcrumb_update
       flash.now[:alert] = 'не удалось изменить тикет'
       render :edit
     end
@@ -49,6 +53,10 @@ class Admin::TicketsController < Admin::BaseController
 
   private
 
+  def breadcrumb_update
+    add_breadcrumb "изменить '#{@Ticket.title}'"  , [:edit, :admin, @Ticket ]
+  end
+
   def set_ticket
     @Ticket = Ticket.find(params[:id])
   end
@@ -58,6 +66,6 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:title,:email,:body)
+    params.require(:ticket).permit(:title,:email,:body,:type_id)
   end
 end

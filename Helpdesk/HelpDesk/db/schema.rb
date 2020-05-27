@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_164203) do
+ActiveRecord::Schema.define(version: 2020_05_27_142406) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 2020_05_26_164203) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "ticket_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ticket_id"], name: "index_answers_on_ticket_id"
+  end
+
   create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.string "email"
@@ -38,6 +46,8 @@ ActiveRecord::Schema.define(version: 2020_05_26_164203) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uuid"
+    t.bigint "type_id"
+    t.index ["type_id"], name: "index_tickets_on_type_id"
   end
 
   create_table "types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -46,4 +56,6 @@ ActiveRecord::Schema.define(version: 2020_05_26_164203) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "answers", "tickets"
+  add_foreign_key "tickets", "types"
 end

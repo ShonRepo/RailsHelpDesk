@@ -3,8 +3,11 @@ tr
   td= ticket.title
   td= ticket.email
   td= ticket.updated_at
-  td
-    .btn-group role="group"
+  - if ticket.type
+    td= ticket.type.decorate.type_number
+  - else
+    td= '-'
+  td.btn-group role="group"
       = link_to [ :edit, :admin, ticket ], class: 'btn btn-outline-primary btn-sm'
         = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
 

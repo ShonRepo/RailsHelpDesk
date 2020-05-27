@@ -1,0 +1,5 @@
+= simple_form_for [:admin,@Ticket, @Ticket.answers.build] do |f|
+
+  = f.input :comment ,label: 'Ответ'
+  .btn_box
+    = f.button :submit, 'Отправить', class: 'btn btn-outline-success'

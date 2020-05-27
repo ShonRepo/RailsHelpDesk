@@ -19,7 +19,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     - if current_admin
         li.dropdown
           a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-            | #{current_admin.first_name} #{current_admin.last_name}
+            | #{current_admin.decorate.full_name}
             span.caret
           ul.dropdown-menu
             li
