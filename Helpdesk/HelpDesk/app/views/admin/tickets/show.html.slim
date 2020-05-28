@@ -1,11 +1,15 @@
-.card
+  = link_to 'Назад', admin_tickets_path, class: 'btn btn-outline-danger float-right'
   h1 Тикет: #{@Ticket.title}
 
+  hr
   h2 Тип: #{@Ticket.type.name}
+  hr
   h6 подробная информация
   .card
     .overflow-auto
       p #{@Ticket.body}
-  = render 'admin/answers/answerform'
+  .card
 
-  = render @Ticket.answers
+    = render 'admin/answers/answerform'
+
+    = render @Ticket.answers

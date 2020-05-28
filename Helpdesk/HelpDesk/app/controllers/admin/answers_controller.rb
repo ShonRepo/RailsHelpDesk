@@ -7,6 +7,13 @@ class Admin::AnswersController < ApplicationController
 
   def create
     @Ticket.answers.create(answers_params)
+    
+    if@Ticket.save
+      redirect_to [:admin, @Ticket]
+    else
+      flash.now[:alert] = 'не удаось добавить ответ'
+      redirect_to [:admin, @Ticket]
+    end
   end
 
   def destroy
@@ -21,7 +28,7 @@ class Admin::AnswersController < ApplicationController
   end
 
   def answers_params
-    params.require(:ticket).permit(:comment,:ticket_id)
+    params.require(:answer).permit(:comment,:ticket_id)
   end
 
 end

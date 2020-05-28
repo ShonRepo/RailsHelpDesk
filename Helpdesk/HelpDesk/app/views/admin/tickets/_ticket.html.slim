@@ -8,6 +8,9 @@ tr
   - else
     td= '-'
   td.btn-group role="group"
+      = link_to [ :admin, ticket ], class: 'btn btn-outline-info btn-sm'
+        = octicon "repo-push", :height => 32,  :class => "right left", :"aria-label" => "hi"
+
       = link_to [ :edit, :admin, ticket ], class: 'btn btn-outline-primary btn-sm'
         = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
 
