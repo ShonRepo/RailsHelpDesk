@@ -1,0 +1,13 @@
+default: &default
+  plugins:
+    - image
+    - link
+
+alternate:
+  <<: *default
+  toolbar: styleselect | bold italic | undo redo | table | preview
+  plugins:
+    - table
+    - image
+    - link
+    - preview

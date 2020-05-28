@@ -24969,3 +24969,1053 @@ Processing by Admin::TicketsController#index as HTML
 Completed 200 OK in 220ms (Views: 213.8ms | ActiveRecord: 3.9ms)
 
 
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:03:13 +0300
+  [1m[35m (42.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (1.9ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (1.1ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (41.9ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (120.8ms)
+  Rendered admin/shared/_main_menu.html.slim (7.6ms)
+Completed 200 OK in 26640ms (Views: 26500.7ms | ActiveRecord: 55.9ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:03:42 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (1.9ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (95.4ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (99.5ms)
+  Rendered admin/shared/_main_menu.html.slim (7.4ms)
+Completed 200 OK in 194ms (Views: 185.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:04:29 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (18.9ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (22.1ms)
+  Rendered admin/shared/_main_menu.html.slim (17.9ms)
+Completed 200 OK in 102ms (Views: 98.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:04:29 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (44.8ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (49.0ms)
+  Rendered admin/shared/_main_menu.html.slim (16.7ms)
+Completed 200 OK in 214ms (Views: 209.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:04:30 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (21.8ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (24.3ms)
+  Rendered admin/shared/_main_menu.html.slim (5.6ms)
+Completed 200 OK in 114ms (Views: 108.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:04:46 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (24.1ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (27.6ms)
+  Rendered admin/shared/_main_menu.html.slim (8.2ms)
+Completed 200 OK in 127ms (Views: 122.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:04:46 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (21.4ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (25.6ms)
+  Rendered admin/shared/_main_menu.html.slim (9.1ms)
+Completed 200 OK in 121ms (Views: 117.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:05:33 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (1.9ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.6ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (31.0ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (36.6ms)
+  Rendered admin/shared/_main_menu.html.slim (12.7ms)
+Completed 200 OK in 154ms (Views: 140.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:06:54 +0300
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (2.2ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (1.7ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (93.6ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (103.3ms)
+  Rendered admin/shared/_main_menu.html.slim (31.2ms)
+Completed 200 OK in 1423ms (Views: 1340.5ms | ActiveRecord: 39.4ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:06:57 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (1.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (16.6ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (32.7ms)
+  Rendered admin/shared/_main_menu.html.slim (17.7ms)
+Completed 200 OK in 137ms (Views: 130.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:06:59 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (42.3ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (51.4ms)
+  Rendered admin/shared/_main_menu.html.slim (7.5ms)
+Completed 200 OK in 141ms (Views: 135.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:07:50 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (18.2ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (21.4ms)
+  Rendered admin/shared/_main_menu.html.slim (14.7ms)
+Completed 200 OK in 115ms (Views: 110.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:07:57 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (29.0ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (31.8ms)
+  Rendered admin/shared/_main_menu.html.slim (13.4ms)
+Completed 200 OK in 109ms (Views: 103.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:08:02 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (5.3ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (13.6ms)
+  Rendered admin/shared/_main_menu.html.slim (7.8ms)
+Completed 200 OK in 81ms (Views: 76.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/tickets/new" for ::1 at 2020-05-28 20:08:03 +0300
+Processing by Admin::TicketsController#new as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/new.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (18.4ms)
+  Rendered admin/tickets/new.html.slim within layouts/admin (21.8ms)
+  Rendered admin/shared/_main_menu.html.slim (6.0ms)
+Completed 200 OK in 83ms (Views: 79.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/tickets/new" for ::1 at 2020-05-28 20:09:00 +0300
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admin::TicketsController#new as HTML
+  [1m[36mAdmin Load (1.8ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/new.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (118.6ms)
+  Rendered admin/tickets/new.html.slim within layouts/admin (129.3ms)
+  Rendered admin/shared/_main_menu.html.slim (19.6ms)
+Completed 200 OK in 1283ms (Views: 1209.2ms | ActiveRecord: 33.2ms)
+
+
+Started GET "/admin/tickets/new" for ::1 at 2020-05-28 20:10:36 +0300
+  [1m[35m (2.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admin::TicketsController#new as HTML
+  [1m[36mAdmin Load (1.9ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/new.html.slim within layouts/admin
+  [1m[36mType Load (3.4ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (125.4ms)
+  Rendered admin/tickets/new.html.slim within layouts/admin (136.0ms)
+  Rendered admin/shared/_main_menu.html.slim (21.2ms)
+Completed 200 OK in 2339ms (Views: 2257.6ms | ActiveRecord: 36.8ms)
+
+
+Started POST "/admin/tickets" for ::1 at 2020-05-28 20:12:21 +0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admin::TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1SVkDGljPseQrl6k5YpOAdi/vdZBhhSXCGEQobCsD9aDtg7n7KK9YDoOqlhXOrnt+b6WbZS58CLLgmnw43CUYQ==", "ticket"=>{"title"=>"", "email"=>"", "type_id"=>"", "body"=>"<h1 style=\"text-align: center;\">тест подробной инфы</h1>\r\n<p>&nbsp;</p>"}, "commit"=>"Сохранить"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/tickets_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/tickets_controller.rb:17
+  Rendering admin/tickets/new.html.slim within layouts/admin
+  [1m[36mType Load (2.6ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (90.1ms)
+  Rendered admin/tickets/new.html.slim within layouts/admin (103.6ms)
+  Rendered admin/shared/_main_menu.html.slim (12.0ms)
+Completed 200 OK in 1385ms (Views: 1274.8ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:12:29 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (11.2ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (20.6ms)
+  Rendered admin/shared/_main_menu.html.slim (23.0ms)
+Completed 200 OK in 163ms (Views: 158.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:12:32 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/answers/_answerform.html.slim (54.4ms)
+  [1m[36mAnswer Load (3.3ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:15
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (4.2ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (76.8ms)
+  Rendered admin/shared/_main_menu.html.slim (8.0ms)
+Completed 200 OK in 172ms (Views: 151.4ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:12:36 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (5.6ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (11.8ms)
+  Rendered admin/shared/_main_menu.html.slim (11.3ms)
+Completed 200 OK in 91ms (Views: 87.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:12:37 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (15.3ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (18.6ms)
+  Rendered admin/shared/_main_menu.html.slim (8.9ms)
+Completed 200 OK in 126ms (Views: 121.6ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/admin/tickets/22" for ::1 at 2020-05-28 20:14:16 +0300
+Processing by Admin::TicketsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G/O6+5wAXiFZMup5YhBWopYDsVnygYqsdbfbBiPaWn9NYNAQGcHdhvOSHoXQoKFOtwKa4ie+bhm2VKJXcAbByA==", "ticket"=>{"title"=>"jjhijokj", "email"=>"jhkojio@das.ru", "type_id"=>"3", "body"=>"<h1 style=\"text-align: center;\">Тест</h1>\r\n<p>123</p>\r\n<p><img src=\"https://avatars.mds.yandex.net/get-pdb/2812516/1cd07616-2f51-4da8-baa9-7c2142396d98/s1200\" alt=\"\" width=\"391\" height=\"391\" /></p>"}, "commit"=>"Сохранить", "id"=>"22"}
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.5ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/tickets_controller.rb:36
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:36
+  [1m[36mTicket Update (22.5ms)[0m  [1m[33mUPDATE `tickets` SET `body` = '<h1 style=\"text-align: center;\">Тест</h1>\r\n<p>123</p>\r\n<p><img src=\"https://avatars.mds.yandex.net/get-pdb/2812516/1cd07616-2f51-4da8-baa9-7c2142396d98/s1200\" alt=\"\" width=\"391\" height=\"391\" /></p>', `updated_at` = '2020-05-28 17:14:17' WHERE `tickets`.`id` = 22[0m
+  ↳ app/controllers/admin/tickets_controller.rb:36
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/tickets_controller.rb:36
+Redirected to http://localhost:3000/admin/tickets
+Completed 302 Found in 47ms (ActiveRecord: 34.9ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:14:17 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (21.3ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (31.1ms)
+  Rendered admin/shared/_main_menu.html.slim (8.6ms)
+Completed 200 OK in 149ms (Views: 144.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:14:19 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (24.6ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (27.5ms)
+  Rendered admin/shared/_main_menu.html.slim (7.3ms)
+Completed 200 OK in 116ms (Views: 110.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:17:26 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (0.5ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (5.8ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (14.5ms)
+  Rendered admin/shared/_main_menu.html.slim (9.0ms)
+Completed 200 OK in 110ms (Views: 105.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:17:27 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/answers/_answerform.html.slim (8.1ms)
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:15
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (3.3ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (23.4ms)
+  Rendered admin/shared/_main_menu.html.slim (7.9ms)
+Completed 200 OK in 133ms (Views: 128.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:17:32 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (16.6ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (19.6ms)
+  Rendered admin/shared/_main_menu.html.slim (6.6ms)
+Completed 200 OK in 88ms (Views: 82.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:17:51 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (2.2ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (1.0ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (22.1ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (25.1ms)
+  Rendered admin/shared/_main_menu.html.slim (7.4ms)
+Completed 200 OK in 146ms (Views: 139.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:17:57 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (1.2ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (7.9ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (21.0ms)
+  Rendered admin/shared/_main_menu.html.slim (5.0ms)
+Completed 200 OK in 124ms (Views: 119.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:18:00 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  Rendered admin/tickets/show.html.slim within layouts/admin (14.5ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+
+
+
+ActionView::Template::Error - Unknown line indicator
+  /Users/ivan/Desktop/test/RailsHelpDesk/app/views/admin/tickets/show.html.slim, Line 10, Column 6
+    @Ticket.body
+    ^
+:
+
+Started POST "/__better_errors/591ae4c2af808f55/variables" for ::1 at 2020-05-28 20:18:00 +0300
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:18:13 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  Rendered admin/tickets/show.html.slim within layouts/admin (2.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.7ms)
+
+
+
+ActionView::Template::Error - Unknown line indicator
+  /Users/ivan/Desktop/test/RailsHelpDesk/app/views/admin/tickets/show.html.slim, Line 10, Column 6
+    @Ticket.body
+    ^
+:
+
+Started POST "/__better_errors/c271d2b193d565d1/variables" for ::1 at 2020-05-28 20:18:13 +0300
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:18:26 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (1.0ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  Rendered admin/tickets/show.html.slim within layouts/admin (2.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.3ms)
+
+
+
+ActionView::Template::Error - Unknown line indicator
+  /Users/ivan/Desktop/test/RailsHelpDesk/app/views/admin/tickets/show.html.slim, Line 11, Column 8
+    @Ticket.body
+    ^
+:
+
+Started POST "/__better_errors/fe7493291a17a73f/variables" for ::1 at 2020-05-28 20:18:26 +0300
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:18:39 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.5ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/answers/_answerform.html.slim (21.4ms)
+  [1m[36mAnswer Load (2.1ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:16
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (4.6ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (40.0ms)
+  Rendered admin/shared/_main_menu.html.slim (6.2ms)
+Completed 200 OK in 166ms (Views: 157.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:18:53 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (2.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/answers/_answerform.html.slim (7.0ms)
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:15
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (2.8ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (20.5ms)
+  Rendered admin/shared/_main_menu.html.slim (8.1ms)
+Completed 200 OK in 122ms (Views: 115.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:19:02 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/answers/_answerform.html.slim (7.0ms)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:14
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (3.1ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (17.5ms)
+  Rendered admin/shared/_main_menu.html.slim (18.2ms)
+Completed 200 OK in 121ms (Views: 116.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:19:03 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/answers/_answerform.html.slim (5.2ms)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:14
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (2.3ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (14.0ms)
+  Rendered admin/shared/_main_menu.html.slim (7.5ms)
+Completed 200 OK in 106ms (Views: 102.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:39:09 +0300
+  [1m[35m (2.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (3.8ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.5ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (1.8ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/answers/_answerform.html.slim (31.1ms)
+  [1m[36mAnswer Load (3.8ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:14
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (4.4ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (58.8ms)
+  Rendered admin/shared/_main_menu.html.slim (11.5ms)
+Completed 200 OK in 219ms (Views: 191.5ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:42:30 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (1.1ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.5ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (11.5ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (28.8ms)
+  Rendered admin/shared/_main_menu.html.slim (7.5ms)
+Completed 200 OK in 160ms (Views: 152.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:42:36 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (22.5ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (25.6ms)
+  Rendered admin/shared/_main_menu.html.slim (7.6ms)
+Completed 200 OK in 120ms (Views: 116.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:42:51 +0300
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (120.4ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (129.6ms)
+  Rendered admin/shared/_main_menu.html.slim (9.5ms)
+Completed 200 OK in 1464ms (Views: 1392.6ms | ActiveRecord: 29.8ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:44:44 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (4.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (2.7ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (2.0ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (75.9ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (90.8ms)
+  Rendered admin/shared/_main_menu.html.slim (7.5ms)
+Completed 200 OK in 260ms (Views: 241.2ms | ActiveRecord: 9.0ms)
+
+
+Started PATCH "/admin/tickets/22" for ::1 at 2020-05-28 20:47:56 +0300
+Processing by Admin::TicketsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"60RpI8DA9OZN8Y4M2ro+rSvFG0oEzhu9JAYDWtCPOUG91wPIRQF3QedRevBoCslBCsQw8dHx/wjn5XoLg1Oi9g==", "ticket"=>{"title"=>"jjhijokj", "email"=>"jhkojio@das.ru", "type_id"=>"3", "body"=>"<h1 style=\"text-align: center;\">Тест</h1>\r\n<p>123</p>\r\n<p><img src=\"https://avatars.mds.yandex.net/get-pdb/2812516/1cd07616-2f51-4da8-baa9-7c2142396d98/s1200\" alt=\"\" width=\"391\" height=\"391\" /></p>"}, "commit"=>"Сохранить", "id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/tickets_controller.rb:36
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/tickets_controller.rb:36
+Redirected to http://localhost:3000/admin/tickets
+Completed 302 Found in 17ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:47:56 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (5.7ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (14.5ms)
+  Rendered admin/shared/_main_menu.html.slim (14.5ms)
+Completed 200 OK in 124ms (Views: 120.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:47:58 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (15.8ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (18.2ms)
+  Rendered admin/shared/_main_menu.html.slim (8.8ms)
+Completed 200 OK in 97ms (Views: 93.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 20:52:40 +0300
+  [1m[35m (1.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/railties-5.2.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/railties-5.2.4.2/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 18ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 20:52:43 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/railties-5.2.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/railties-5.2.4.2/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:52:44 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (5.0ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (1.2ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (34.1ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (87.6ms)
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:52:44 +0300
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (9.3ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (19.5ms)
+Completed 500 Internal Server Error in 1460ms (ActiveRecord: 45.4ms)
+
+
+
+ActionView::Template::Error - can't replace hash during iteration:
+
+  Rendered admin/shared/_main_menu.html.slim (10.4ms)
+Completed 200 OK in 1276ms (Views: 1271.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/tickets/22/edit" for ::1 at 2020-05-28 20:52:48 +0300
+Processing by Admin::TicketsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/edit.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT `types`.* FROM `types`[0m
+  ↳ app/views/admin/tickets/_form.html.slim:5
+  Rendered admin/tickets/_form.html.slim (100.0ms)
+  Rendered admin/tickets/edit.html.slim within layouts/admin (103.6ms)
+  Rendered admin/shared/_main_menu.html.slim (12.6ms)
+Completed 200 OK in 258ms (Views: 251.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/types" for ::1 at 2020-05-28 20:52:57 +0300
+Processing by Admin::TypesController#index as HTML
+  [1m[36mAdmin Load (2.0ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/types/index.html.slim within layouts/admin
+  [1m[36mType Load (2.2ms)[0m  [1m[34mSELECT  `types`.* FROM `types` ORDER BY `types`.`name` ASC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/types/index.html.slim:12
+  Rendered collection of admin/types/_type.html.slim [4 times] (3.5ms)
+  Rendered admin/types/index.html.slim within layouts/admin (13.8ms)
+  Rendered admin/shared/_main_menu.html.slim (15.0ms)
+Completed 200 OK in 134ms (Views: 126.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/admin/tickets" for ::1 at 2020-05-28 20:52:58 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admin/tickets/index.html.slim within layouts/admin
+  [1m[36mTicket Load (0.9ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` ORDER BY `tickets`.`updated_at` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/tickets/index.html.slim:15
+  [1m[36mType Load (0.4ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  [1m[36mCACHE Type Load (0.0ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/admin/tickets/_ticket.html.slim:6
+  Rendered collection of admin/tickets/_ticket.html.slim [2 times] (6.2ms)
+  Rendered admin/tickets/index.html.slim within layouts/admin (15.3ms)
+  Rendered admin/shared/_main_menu.html.slim (7.3ms)
+Completed 200 OK in 127ms (Views: 121.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:53:02 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (1.0ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/answers/_answerform.html.slim (46.6ms)
+  [1m[36mAnswer Load (1.5ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:14
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (3.5ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (60.0ms)
+  Rendered admin/shared/_main_menu.html.slim (7.0ms)
+Completed 200 OK in 150ms (Views: 114.7ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:54:54 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/tickets/_show.html.erb (0.2ms)
+  Rendered admin/answers/_answerform.html.slim (6.8ms)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:14
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (2.7ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (18.7ms)
+  Rendered admin/shared/_main_menu.html.slim (7.3ms)
+Completed 200 OK in 132ms (Views: 128.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:57:30 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.7ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/tickets/_show.html.erb (684.5ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (709.3ms)
+Completed 500 Internal Server Error in 743ms (ActiveRecord: 1.8ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `ticket' for #<#<Class:0x00007fd357e3ec48>:0x00007fd359766180>
+Did you mean?  @Ticket:
+  app/views/admin/tickets/show.html.slim:11:in `_app_views_admin_tickets_show_html_slim___3551077947716427319_31220'
+
+Started POST "/__better_errors/2f6bbeeade21a999/variables" for ::1 at 2020-05-28 20:57:30 +0300
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:57:38 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.5ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/tickets/_show.html.erb (0.5ms)
+  Rendered admin/answers/_answerform.html.slim (28.5ms)
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:16
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (2.9ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (46.4ms)
+  Rendered admin/shared/_main_menu.html.slim (82.7ms)
+Completed 200 OK in 273ms (Views: 268.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:57:52 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.5ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/tickets/_show.html.erb (0.3ms)
+  Rendered admin/answers/_answerform.html.slim (9.9ms)
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:16
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (2.6ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (20.9ms)
+  Rendered admin/shared/_main_menu.html.slim (45.9ms)
+Completed 200 OK in 245ms (Views: 239.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:57:55 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/tickets/_show.html.erb (0.4ms)
+  Rendered admin/answers/_answerform.html.slim (11.0ms)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:16
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (3.7ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (27.8ms)
+  Rendered admin/shared/_main_menu.html.slim (8.1ms)
+Completed 200 OK in 176ms (Views: 171.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 20:58:05 +0300
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.3ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/tickets/_show.html.erb (3.7ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (11.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.0ms)
+
+
+
+ActionView::Template::Error - undefined method `to_html' for #<String:0x00007fd35ead8598>
+Did you mean?  to_yaml:
+  app/views/admin/tickets/show.html.slim:11:in `_app_views_admin_tickets_show_html_slim___3551077947716427319_32000'
+
+Started POST "/__better_errors/878e2eacf42deb64/variables" for ::1 at 2020-05-28 20:58:05 +0300
+Started GET "/admin/tickets/22" for ::1 at 2020-05-28 21:59:55 +0300
+  [1m[35m (2.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admin::TicketsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  ↳ /Users/ivan/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mTicket Load (0.6ms)[0m  [1m[34mSELECT  `tickets`.* FROM `tickets` WHERE `tickets`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/admin/tickets_controller.rb:61
+  Rendering admin/tickets/show.html.slim within layouts/admin
+  [1m[36mType Load (0.5ms)[0m  [1m[34mSELECT  `types`.* FROM `types` WHERE `types`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/admin/tickets/show.html.slim:5
+  Rendered admin/answers/_answerform.html.slim (32.8ms)
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT `answers`.* FROM `answers` WHERE `answers`.`ticket_id` = 22[0m
+  ↳ app/views/admin/tickets/show.html.slim:15
+  Rendered collection of admin/answers/_answer.html.slim [8 times] (3.6ms)
+  Rendered admin/tickets/show.html.slim within layouts/admin (59.3ms)
+  Rendered admin/shared/_main_menu.html.slim (10.4ms)
+Completed 200 OK in 291ms (Views: 263.3ms | ActiveRecord: 3.1ms)
+
+
