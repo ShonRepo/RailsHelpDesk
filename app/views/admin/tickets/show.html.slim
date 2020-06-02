@@ -1,15 +1,14 @@
   = link_to 'Назад', admin_tickets_path, class: 'btn btn-outline-danger float-right'
+  = link_to 'Изменить', [:edit,:admin,@Ticket ], class: 'btn btn-outline-info float-right'
   h1 Тикет: #{@Ticket.title}
 
   hr
   h2 Тип: #{@Ticket.type.name}
   hr
   h6 подробная информация
-  .card
-    .overflow-auto
-      #{@Ticket.body}
-  .card
 
-    = render 'admin/answers/answerform'
 
-    = render @Ticket.answers
+  p #{@Ticket.body.html_safe}
+
+  = render 'admin/answers/answerform'
+  = render @Ticket.answers

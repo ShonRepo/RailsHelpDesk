@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_142406) do
+ActiveRecord::Schema.define(version: 2020_06_01_132511) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 2020_05_27_142406) do
     t.string "uuid"
     t.bigint "type_id"
     t.index ["type_id"], name: "index_tickets_on_type_id"
+  end
+
+  create_table "tinymce_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "file"
+    t.string "owner_type"
+    t.bigint "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_type", "owner_id"], name: "index_tinymce_images_on_owner_type_and_owner_id"
   end
 
   create_table "types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|

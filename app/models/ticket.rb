@@ -3,9 +3,11 @@ class Ticket < ApplicationRecord
 
   has_many :answers
 
+  has_many :tinymce_images, as: :owner
+
   validates :title, presence: true
   validates :email, presence: true, format:
    {with: /\A[^@\s]+@[^@\s]+\z/, message: "проверьте формат"}
-  validates :body, presence: true
+  
 
 end

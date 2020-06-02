@@ -1,5 +1,5 @@
 class Admin::TicketsController < Admin::BaseController
-  before_action :set_ticket, only: [:edit, :update, :destroy,:show]
+  before_action :set_ticket, only: [:edit, :update, :destroy,:show, :create_stage]
   add_breadcrumb "тикеты", :admin_tickets_path
 
   def index
@@ -12,15 +12,26 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def create
-    @Ticket = Ticket.new(ticket_params)
-    @Ticket[:uuid] = SecureRandom.hex(10)
-    if@Ticket.save
-      redirect_to admin_tickets_path, notice: 'Тикет успешно создан'
+    if Ticket.where(ticket_params)
+
+      @Ticket = Ticket.new(ticket_params)
+      @Ticket[:uuid] = SecureRandom.hex(10)
+      if@Ticket.save
+        redirect_to admin_stage_path(@Ticket), notice: 'Добавьте описание'
+      else
+        add_breadcrumb "новый тикет", new_admin_ticket_path, title: 'Тикеты'
+        flash.now[:alert] = 'не удаось создать тикет'
+        render :new
+      end
     else
-      add_breadcrumb "новый тикет", new_admin_ticket_path, title: 'Тикеты'
       flash.now[:alert] = 'не удаось создать тикет'
       render :new
     end
+
+  end
+
+  def create_stage
+    
   end
 
   def show

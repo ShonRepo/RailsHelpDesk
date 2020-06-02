@@ -3,12 +3,19 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+ #gem "recaptcha"
+
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 
+gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
+gem 'carrierwave', '~> 2.0'
+
 gem 'octicons_helper'
 gem "breadcrumbs_on_rails"
+
 gem 'bootstrap', '~> 4.4.1'
+
 
 gem 'slim-rails'
 gem 'simple_form'
@@ -18,12 +25,17 @@ gem 'russian', github: 'yaroslav/russian'
 gem 'gon'
 gem 'lightbox2-rails'
 
+# decorators
 gem 'draper'
+
+# ORM
 gem 'ransack'
 
+# jquery
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+# autorzation
 gem 'devise'
 gem 'authority'
 

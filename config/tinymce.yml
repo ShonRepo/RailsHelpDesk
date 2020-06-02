@@ -2,11 +2,14 @@ default: &default
   plugins:
     - image
     - link
+    - uploadimage
+    - uploadimage
 
 alternate:
   <<: *default
-  toolbar: styleselect | bold italic | undo redo | table | preview
+  toolbar: uploadimage | image | styleselect | bold italic | undo redo | table | preview
   plugins:
+    - uploadimage
     - table
     - image
     - link
