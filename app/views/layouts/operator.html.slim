@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title HelpDesk
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = render 'operator/shared/main_menu'
+
+    .container
+      - if current_operator
+        .row
+          ol.breadcrumb
+            = render_breadcrumbs tag: :li, separator: "-/-"
+      .row
+        .col-md-12
+          = render_flash
+      .row
+        .col-md-12
+          = yield

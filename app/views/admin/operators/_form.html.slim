@@ -1,0 +1,11 @@
+= simple_form_for [:admin,@Operator ] do |f|
+
+  = f.input :first_name ,label: 'имя'
+  = f.input :last_name ,label: 'фамилия'
+  = f.input :email
+  = f.input :password , label: 'пароль'
+  = f.input :password_confirmation , label: 'повторите пароль'
+  .btn_box
+    = f.button :submit, 'Сохранить', class: 'btn btn-outline-success'
+    = link_to 'Отмена', admin_operators_path, class: 'btn btn-light'
+    = link_to 'Удалить' ,[ :admin, @Operator ], class: 'btn btn-outline-danger',data: {confirm: "хотите удалить  '#{@Operator.last_name}'"}, method: :delete if @Operator.persisted?

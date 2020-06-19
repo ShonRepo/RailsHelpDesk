@@ -3,6 +3,8 @@
   = f.input :title ,label: 'Проблема'
   = f.input :email
   = f.association :type, collection: Type.all.decorate, label_method: :type_number, label: 'Тип'
+  = f.association :status, collection: Status.all, label_method: :name, label: 'Статус'
+  = f.association :operator, collection: Operator.all.decorate, label_method: :full_name, label: 'Оператор'
   - if @Ticket.persisted?
     = f.input :body , label: 'Опишите проблему', input_html: { class: 'tinymce', rows: 20, cols: 120}
     = tinymce :alternate, language: 'ru', uploadimage_form_url: admin_ticket_tinymce_images_path(@Ticket)

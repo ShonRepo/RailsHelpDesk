@@ -1,16 +1,33 @@
 Rails.application.routes.draw do
+
+  namespace :operator do
+    resources :tickets, only: [:index, :show, :edit, :update]
+    
+    root to: "tickets#index"
+
+    get 'tickets/:id/create_stage', to: 'tickets#create_stage' , as: 'stage'
+    get 'indexthis', to: 'tickets#indexthis' , as: 'indexthis'
+
+  end
+
+  scope :operator do
+    devise_for :operators, controllers: {sessions: 'operator/operators/sessions',passwords: 'operator/operators/passwords'}
+  end
+
   scope :admin do
     devise_for :admins, controllers: {sessions: 'admin/admins/sessions'}
   end
 
   namespace :admin do
-    root to: "main#index"
-    get 'main/index'
+    root to: "tickets#index"
+
     resources :types,  except: :show
 
     resources :admins,  except: :show
 
+    resources :statuses,  except: :show
 
+    resources :operators,  except: :show
 
     resources :tickets, only: [] do
       resources :tinymce_images, only: :create, owner: 'ticket'

@@ -1,0 +1,17 @@
+h1 Операторы
+
+
+= link_to 'Новый оператор', new_admin_operator_path, class: 'btn float-right btn-outline-success '
+table.table
+  thead
+    tr
+      th scope="col"  #
+      th scope="col"  имя
+      th scope="col"  фамилия
+      th scope="col"  Email
+      th scope="col"
+  tbody
+    =render @Operators
+= paginate @Operators, theme: 'twitter-bootstrap-4',
+                    pagination_class: "pagination-sm",
+                   nav_class: "d-inline-b"

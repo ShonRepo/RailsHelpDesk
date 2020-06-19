@@ -1,0 +1,15 @@
+h1 Статусы
+
+
+= link_to 'Новый тип', new_admin_status_path, class: 'btn float-right btn-outline-success '
+table.table
+  thead
+    tr
+      th scope="col"  #
+      th scope="col"  название
+
+  tbody
+    =render @Statuses
+= paginate @Statuses, theme: 'twitter-bootstrap-4',
+                    pagination_class: "pagination-sm",
+                   nav_class: "d-inline-b"

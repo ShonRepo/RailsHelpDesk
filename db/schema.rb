@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_01_132511) do
+ActiveRecord::Schema.define(version: 2020_06_04_143917) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,6 +39,29 @@ ActiveRecord::Schema.define(version: 2020_06_01_132511) do
     t.index ["ticket_id"], name: "index_answers_on_ticket_id"
   end
 
+  create_table "operators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_operators_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_operators_on_reset_password_token", unique: true
+  end
+
+  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.string "email"
@@ -47,6 +70,10 @@ ActiveRecord::Schema.define(version: 2020_06_01_132511) do
     t.datetime "updated_at", null: false
     t.string "uuid"
     t.bigint "type_id"
+    t.bigint "status_id" , null: true
+    t.bigint "operator_id"
+    t.index ["operator_id"], name: "index_tickets_on_operator_id"
+    t.index ["status_id"], name: "index_tickets_on_status_id"
     t.index ["type_id"], name: "index_tickets_on_type_id"
   end
 
@@ -66,5 +93,7 @@ ActiveRecord::Schema.define(version: 2020_06_01_132511) do
   end
 
   add_foreign_key "answers", "tickets"
+  add_foreign_key "tickets", "operators"
+  add_foreign_key "tickets", "statuses"
   add_foreign_key "tickets", "types"
 end

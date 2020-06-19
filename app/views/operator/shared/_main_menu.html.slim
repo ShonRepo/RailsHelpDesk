@@ -1,0 +1,26 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  = link_to 'HelpDesk', operator_root_path, class: 'navbar-brand'
+  button.navbar-toggler aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+  #navbarNavAltMarkup.collapse.navbar-collapse
+    .navbar-nav
+      - if current_operator
+        - @main_menu.each do |item, options|
+            //a.nav-item.nav-link.activeu href=admin_root_path
+            //  | Домой
+            //  span.sr-only (current)
+            li class=(options[:active] ? 'active' :'')
+              = link_to options[:name], options[:path], class: 'nav-item nav-link'
+            //a.nav-item.nav-link href="#"  пользователи
+  ul.nav.navbar-nav.navbar-right
+    - if !current_operator
+      li.dropdown
+        = link_to 'Войти', new_operator_session_path
+    - if current_operator
+        li.dropdown
+          a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+            | #{current_operator.decorate.full_name}
+            span.caret
+          ul.dropdown-menu
+            li
+              = link_to 'Выйти', destroy_operator_session_path, method: :delete

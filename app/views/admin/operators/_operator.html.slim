@@ -1,0 +1,12 @@
+tr
+  td= operator.id
+  td= operator.first_name
+  td= operator.last_name
+  td= operator.email
+  td
+    .btn-group role="group"
+      = link_to [ :edit, :admin, operator ], class: 'btn btn-outline-primary btn-sm'
+        = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
+
+      = link_to  [ :admin, operator ], class: 'btn btn-outline-danger btn-sm',data: {confirm: "хотите удалить '#{operator.last_name}'"}, method: :delete
+        = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"

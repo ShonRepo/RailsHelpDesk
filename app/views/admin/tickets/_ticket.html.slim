@@ -2,7 +2,15 @@ tr
   td= ticket.uuid
   td= ticket.title
   td= ticket.email
-  td= ticket.updated_at
+  - if ticket.status
+    td= ticket.status.name
+  - else
+    td= '-'
+  - if ticket.operator
+    td= ticket.operator.decorate.full_name
+  - else
+    td= '-'
+  td= ticket.decorate.short_date
   - if ticket.type
     td= ticket.type.decorate.type_number
   - else

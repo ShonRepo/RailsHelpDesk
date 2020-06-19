@@ -7,7 +7,7 @@ class Admin::AnswersController < ApplicationController
 
   def create
     @Ticket.answers.create(answers_params)
-    
+
     if@Ticket.save
       redirect_to [:admin, @Ticket]
     else
