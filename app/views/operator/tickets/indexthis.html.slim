@@ -1,15 +1,19 @@
 h1 Мои заявки
+form action="indexthis" method="GET"
+  input name="all" type="checkbox" Отобразить завершенные
+  input.btn.float-right.btn-outline-info type="submit" value="Отобразить"
 
-table.table
-  thead
-    tr
-      th scope="col"  uuid
-      th scope="col"  Заголовок
-      th scope="col"  Email
-      th scope="col"  Тип
-      th scope="col"
-  tbody
+
+  table.table
+    thead
+      tr
+        th scope="col"  uuid
+        th scope="col"  Заголовок
+        th scope="col"  Email
+        th scope="col"  Тип
+        th scope="col"
+    tbody
     =render @Tickets
-= paginate @Tickets, theme: 'twitter-bootstrap-4',
-                    pagination_class: "pagination-sm",
-                   nav_class: "d-inline-b"
+  = paginate @Tickets, theme: 'twitter-bootstrap-4',
+                        pagination_class: "pagination-sm",
+                       nav_class: "d-inline-b"

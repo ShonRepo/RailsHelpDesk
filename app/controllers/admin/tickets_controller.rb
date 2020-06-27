@@ -1,5 +1,5 @@
 class Admin::TicketsController < Admin::BaseController
-  before_action :set_ticket, only: [:edit, :update, :destroy,:show, :create_stage]
+  before_action :set_ticket, only: [:edit, :update, :destroy,:show, :create_stage,:take]
   add_breadcrumb "Заявки", :admin_tickets_path
 
   def index
@@ -19,11 +19,11 @@ class Admin::TicketsController < Admin::BaseController
         redirect_to admin_stage_path(@Ticket), notice: 'Добавьте описание'
       else
         add_breadcrumb "новая заявка", new_admin_ticket_path, title: 'Заявки'
-        flash.now[:alert] = 'не удаось создать заявку'
+        flash.now[:alert] = 'не удалось создать заявку'
         render :new
       end
     else
-      flash.now[:alert] = 'не удаось создать заявку'
+      flash.now[:alert] = 'не удалось создать заявку'
       render :new
     end
 

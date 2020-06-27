@@ -1,4 +1,4 @@
-class Admin::TinymceImagesController < ApplicationController
+class Operator::TinymceImagesController < ApplicationController
 
   before_action :authenticate_operator!
 
