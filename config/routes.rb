@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     get 'tickets/(:id)/take', to: 'tickets#take' , as: 'take'
 
     get 'indexthis', to: 'tickets#indexthis' , as: 'indexthis'
-
   end
 
   scope :operator do

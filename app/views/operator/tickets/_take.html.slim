@@ -1,2 +1,4 @@
-= simple_form_for [:operator, @Ticket ] do |f|
-    = f.button :submit , 'Продолжить' , class: 'btn btn-outline-success'
+= simple_form_for [:operator, @Ticket ], action: 'take_this',method: :put  do |f|
+  = f.association :type, collection: Type.all.decorate, label_method: :type_number, label: 'Тип'
+  = f.button :submit , 'Продолжить' , class: 'btn btn-outline-success'
+  = link_to 'Отмена', operator_tickets_path, class: 'btn btn-light'

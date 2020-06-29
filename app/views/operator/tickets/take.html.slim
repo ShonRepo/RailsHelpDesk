@@ -1,2 +1,7 @@
-h1 Принять заявку #{@Ticket.title}
+h1 Принять заявку '#{@Ticket.title}'?
+h6 Заявка создана в #{@Ticket.created_at}
+hr
+p Подробная информация о заявке
+.card
+  p #{@Ticket.body.html_safe}
 = render 'take'

@@ -5,7 +5,7 @@ class Operator::BaseController < ApplicationController
 
   before_action :authenticate_operator!
   before_action :set_main_menu, except: :destroy
-  before_action :set_active_main_menu_item, except: [:destroy, :indexthis,:new,:create,:update,:create_stage]
+  before_action :set_active_main_menu_item, except: [:destroy, :indexthis, :new, :show, :create, :update, :create_stage]
 
   private
   def set_main_menu

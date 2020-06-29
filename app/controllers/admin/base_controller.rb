@@ -8,7 +8,7 @@ class Admin::BaseController < ApplicationController
   private
   def set_main_menu
     @main_menu = { tickets: {name: 'Заявки',path: admin_tickets_path },
-               admins: {name: 'Администраторы',path: admin_admins_path},
+               admins: {name: 'Администраторы',path: admin_admins_path },
               operators: {name: 'Операторы',path: admin_operators_path },
                types: {name: 'Типы',path: admin_types_path },
             statuses: {name: 'Статусы',path: admin_statuses_path }
