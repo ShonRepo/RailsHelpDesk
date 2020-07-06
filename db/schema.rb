@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_04_143917) do
+ActiveRecord::Schema.define(version: 2020_06_30_100835) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_143917) do
     t.bigint "ticket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sender"
     t.index ["ticket_id"], name: "index_answers_on_ticket_id"
   end
 
@@ -70,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_143917) do
     t.datetime "updated_at", null: false
     t.string "uuid"
     t.bigint "type_id"
-    t.bigint "status_id" , null: true
+    t.bigint "status_id"
     t.bigint "operator_id"
     t.index ["operator_id"], name: "index_tickets_on_operator_id"
     t.index ["status_id"], name: "index_tickets_on_status_id"

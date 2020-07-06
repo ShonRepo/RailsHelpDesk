@@ -9,7 +9,7 @@ table.table
       th scope="col"  Тип
       th scope="col"
   tbody
-    =render @Tickets
+    = render @Tickets
 = paginate @Tickets, theme: 'twitter-bootstrap-4',
                     pagination_class: "pagination-sm",
                    nav_class: "d-inline-b"

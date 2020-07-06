@@ -1,2 +1,9 @@
-h1 Operator::Ticket#show
-p Find me in app/views/operator/ticket/show.html.slim
+= link_to 'Назад', operator_indexthis_path, class: 'btn btn-outline-danger float-right'
+= link_to 'Изменить', [:edit,:operator,@Ticket ], class: 'btn btn-outline-info float-right'
+h1 Заявка: #{@Ticket.title}
+hr
+h2 Тип: #{@Ticket.type.name}
+hr
+h6 подробная информация
+
+p #{@Ticket.body.html_safe}
