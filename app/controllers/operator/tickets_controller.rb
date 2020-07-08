@@ -11,7 +11,7 @@ class Operator::TicketsController < Operator::BaseController
   def indexthis
     @Tickets = Ticket.where("operator_id = :me", {me: current_operator.id}).order(updated_at: :desc).page params[:page]
       if !params[:all]
-        @Tickets = @Tickets.where("status_id != 3") .order(updated_at: :desc).page params[:page]
+        @Tickets = @Tickets.where("status_id != 4") .order(updated_at: :desc).page params[:page]
       end
     @main_menu[:meticket][:active] = true
     add_breadcrumb "Мои заявки", :operator_indexthis_path
@@ -45,7 +45,9 @@ class Operator::TicketsController < Operator::BaseController
 
   def take
     add_breadcrumb "Принять заявку '#{@Ticket.title}'", operator_take_path, title: 'Заявки'
-
+    if @Ticket[:operator_id] != 0
+      redirect_to operator_indexthis_path, alert: 'Эта заявка уже принята'
+    end
   end
 
   def create_stage

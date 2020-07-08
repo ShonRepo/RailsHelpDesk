@@ -3,8 +3,14 @@ tr
   td= type.name
   td
     .btn-group role="group"
-      = link_to [ :edit, :admin, type ], class: 'btn btn-outline-primary btn-sm'
+      = link_to [ :edit, :admin, type ], class: 'btn btn-outline-primary btn-sm tag-tooltip',
+                      :data => {:toggle=>"tooltip"},
+                      'data-original-title' => "Изменить тип",
+                      'data-placement' => 'bottom'
         = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
 
-      = link_to  [ :admin, type ], class: 'btn btn-outline-danger btn-sm',data: {confirm: "хотите удалить '#{type.name}'"}, method: :delete
+      = link_to  [ :admin, type ], class: 'btn btn-outline-danger btn-sm',
+      data: {confirm: "хотите удалить '#{type.name}'", :toggle=>"tooltip"},
+      'data-original-title' => "Удалить тип заявки",
+      'data-placement' => 'bottom', method: :delete
         = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"

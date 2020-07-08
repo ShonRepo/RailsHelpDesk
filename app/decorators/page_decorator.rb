@@ -1,4 +1,4 @@
-class Admin::AnswerDecorator < ApplicationDecorator
+class PageDecorator < ApplicationDecorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through

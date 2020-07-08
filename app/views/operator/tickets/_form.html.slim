@@ -5,5 +5,8 @@
     .card
       p #{@Ticket.body.html_safe}
   .btn_box
-    = f.button :submit , 'Продолжить' , class: 'btn btn-outline-success'
-    = link_to 'Отмена', operator_tickets_path, class: 'btn btn-light'
+    = f.button :submit , 'Продолжить' , class: 'btn btn-outline-success tag-tooltip',
+                    :data => {:toggle=>"tooltip"},
+                    'data-original-title' => "Сохранить данные",
+                    'data-placement' => 'bottom'
+    = link_to 'Отмена', operator_indexthis_path, class: 'btn btn-light'

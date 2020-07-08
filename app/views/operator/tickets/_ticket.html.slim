@@ -1,12 +1,10 @@
-- if ticket.status_id == 3
+- if ticket.status_id == 4
   tr.bg-danger
     td= ticket.uuid
     td= ticket.title
     td= ticket.email
-    - if ticket.operator
-      td= ticket.operator.decorate.full_name
-    - else
-      td= '-'
+
+
     - if ticket.type
       td= ticket.type.decorate.type_number
     - else
@@ -14,33 +12,79 @@
     td.btn-group role="group"
 
       - if ticket.operator == current_operator
-        = link_to [ :operator, ticket ], class: 'btn btn-outline-info btn-sm'
+        = link_to [ :operator, ticket ], class: 'btn btn-outline-info btn-sm tag-tooltip',
+                        :data => {:toggle=>"tooltip"},
+                        'data-original-title' => "Перейти на страницу заявки",
+                        'data-placement' => 'bottom'
           = octicon "repo-push", :height => 32,  :class => "right left", :"aria-label" => "hi"
-        = link_to [ :edit,:operator, ticket ], class: 'btn btn-outline-info btn-sm'
+        = link_to [ :edit,:operator, ticket ], class: 'btn btn-outline-info btn-sm tag-tooltip',
+                        :data => {:toggle=>"tooltip"},
+                        'data-original-title' => "Редактировать данные заявки",
+                        'data-placement' => 'bottom'
           = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
       - else
-        = link_to operator_take_path(ticket), class: 'btn btn-outline-primary btn-sm'
+        = link_to operator_take_path(ticket), class: 'btn btn-outline-primary btn-sm tag-tooltip',
+                        :data => {:toggle=>"tooltip"},
+                        'data-original-title' => "Принять заявку",
+                        'data-placement' => 'bottom'
           = octicon "link-external", :height => 32,  :class => "right left", :"aria-label" => "hi"
 -else
-  tr
-    td= ticket.uuid
-    td= ticket.title
-    td= ticket.email
-    - if ticket.operator
-      td= ticket.operator.decorate.full_name
-    - else
-      td= '-'
-    - if ticket.type
-      td= ticket.type.decorate.type_number
-    - else
-      td= '-'
-    td.btn-group role="group"
+  - if ticket.status_id == 2
+    tr.bg-success
+      td= ticket.uuid
+      td= ticket.title
+      td= ticket.email
 
-      - if ticket.operator == current_operator
-        = link_to [ :operator, ticket ], class: 'btn btn-outline-info btn-sm'
-          = octicon "repo-push", :height => 32,  :class => "right left", :"aria-label" => "hi"
-          = link_to [ :edit,:operator, ticket ], class: 'btn btn-outline-info btn-sm'
-            = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
+
+      - if ticket.type
+        td= ticket.type.decorate.type_number
       - else
-        = link_to operator_take_path(ticket), class: 'btn btn-outline-primary btn-sm'
-          = octicon "link-external", :height => 32,  :class => "right left", :"aria-label" => "hi"
+        td= '-'
+      td.btn-group role="group"
+
+        - if ticket.operator == current_operator
+          = link_to [ :operator, ticket ], class: 'btn btn-outline-info btn-sm tag-tooltip',
+                          :data => {:toggle=>"tooltip"},
+                          'data-original-title' => "Перейти на страницу заявки",
+                          'data-placement' => 'bottom'
+            = octicon "repo-push", :height => 32,  :class => "right left", :"aria-label" => "hi"
+          = link_to [ :edit,:operator, ticket ], class: 'btn btn-outline-info btn-sm tag-tooltip',
+                          :data => {:toggle=>"tooltip"},
+                          'data-original-title' => "Редактировать данные заявки",
+                          'data-placement' => 'bottom'
+            = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
+        - else
+          = link_to operator_take_path(ticket), class: 'btn btn-outline-primary btn-sm tag-tooltip',
+                          :data => {:toggle=>"tooltip"},
+                          'data-original-title' => "Принять заявкуку",
+                          'data-placement' => 'bottom'
+            = octicon "link-external", :height => 32,  :class => "right left", :"aria-label" => "hi"
+  -else
+    tr
+      td= ticket.uuid
+      td= ticket.title
+      td= ticket.email
+
+      - if ticket.type
+        td= ticket.type.decorate.type_number
+      - else
+        td= '-'
+      td.btn-group role="group"
+
+        - if ticket.operator == current_operator
+          = link_to [ :operator, ticket ], class: 'btn btn-outline-info btn-sm tag-tooltip',
+                          :data => {:toggle=>"tooltip"},
+                          'data-original-title' => "Перейти на страницу заявки",
+                          'data-placement' => 'bottom'
+            = octicon "repo-push", :height => 32,  :class => "right left", :"aria-label" => "hi"
+          = link_to [ :edit,:operator, ticket ], class: 'btn btn-outline-info btn-sm tag-tooltip',
+                          :data => {:toggle=>"tooltip"},
+                          'data-original-title' => "Редактировать данные заявки",
+                          'data-placement' => 'bottom'
+            = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
+        - else
+          = link_to operator_take_path(ticket), class: 'btn btn-outline-primary btn-sm tag-tooltip',
+                          :data => {:toggle=>"tooltip"},
+                          'data-original-title' => "Принять заявку",
+                          'data-placement' => 'bottom'
+            = octicon "link-external", :height => 32,  :class => "right left", :"aria-label" => "hi"

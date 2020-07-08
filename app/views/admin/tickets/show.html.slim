@@ -11,4 +11,4 @@
   p #{@Ticket.body.html_safe}
 
   = render 'admin/answers/answerform'
-  = render @Ticket.answers
+  = render @Ticket.answers.order(created_at: :desc).decorate

@@ -7,9 +7,9 @@ class Admin::AnswersController < ApplicationController
 
   def create
 
-    @Ticket.answers.create(answers_params)
-    @Ticket[:answers][:sender] = current_admin.email
-    if@Ticket.save
+    @Answers = @Ticket.answers.create(answers_params)
+    @Answers[:sender] = current_admin.email
+    if @Answers.save
       redirect_to [:admin, @Ticket]
     else
       flash.now[:alert] = 'не удаось добавить ответ'

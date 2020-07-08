@@ -1,4 +1,7 @@
 = simple_form_for [:operator, @Ticket ], action: 'take_this',method: :put  do |f|
   = f.association :type, collection: Type.all.decorate, label_method: :type_number, label: 'Тип'
-  = f.button :submit , 'Продолжить' , class: 'btn btn-outline-success'
+  = f.button :submit , 'Продолжить' , class: 'btn btn-outline-success tag-tooltip',
+                  :data => {:toggle=>"tooltip"},
+                  'data-original-title' => "Принять заявку",
+                  'data-placement' => 'bottom'
   = link_to 'Отмена', operator_tickets_path, class: 'btn btn-light'
