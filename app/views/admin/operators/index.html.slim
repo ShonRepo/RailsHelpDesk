@@ -1,7 +1,10 @@
 h1 Операторы
 
 
-= link_to 'Новый оператор', new_admin_operator_path, class: 'btn float-right btn-outline-success '
+= link_to 'Новый оператор', new_admin_operator_path, class: 'btn float-right btn-outline-success tag-tooltip',
+                :data => {:toggle=>"tooltip"},
+                'data-original-title' => "Добавить нового оператора",
+                'data-placement' => 'bottom'
 table.table
   thead
     tr

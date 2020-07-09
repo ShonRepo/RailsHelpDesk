@@ -3,6 +3,13 @@
   = f.input :name ,label: 'название'
 
   .btn_box
-    = f.button :submit, 'Сохранить', class: 'btn btn-outline-success'
+    = f.button :submit, 'Сохранить', class: 'btn btn-outline-success tag-tooltip',
+                    :data => {:toggle=>"tooltip"},
+                    'data-original-title' => "Сохранить тип заявки",
+                    'data-placement' => 'bottom'
     = link_to 'Отмена', admin_types_path, class: 'btn btn-light'
-    = link_to 'Удалить' ,[ :admin, @Type ], class: 'btn btn-outline-danger',data: {confirm: "хотите удалить '#{@Type.name}'"}, method: :delete if @Type.persisted?
+    = link_to 'Удалить' ,[ :admin, @Type ], class: 'btn btn-outline-danger tag-tooltip',
+    data: {confirm: "хотите удалить '#{@Type.name}'", :toggle=>"tooltip"},
+    'data-original-title' => "Удалить тип заявки",
+    'data-placement' => 'bottom',
+    method: :delete if @Type.persisted?

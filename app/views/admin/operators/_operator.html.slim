@@ -5,8 +5,13 @@ tr
   td= operator.email
   td
     .btn-group role="group"
-      = link_to [ :edit, :admin, operator ], class: 'btn btn-outline-primary btn-sm'
+      = link_to [ :edit, :admin, operator ], class: 'btn btn-outline-primary btn-sm tag-tooltip',
+                      :data => {:toggle=>"tooltip"},
+                      'data-original-title' => "Изменить оператора",
+                      'data-placement' => 'bottom'
         = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
 
-      = link_to  [ :admin, operator ], class: 'btn btn-outline-danger btn-sm',data: {confirm: "хотите удалить '#{operator.last_name}'"}, method: :delete
+      = link_to  [ :admin, operator ], class: 'btn btn-outline-danger btn-sm tag-tooltip',data: {confirm: "хотите удалить '#{operator.last_name}'", :toggle=>"tooltip"},
+      'data-original-title' => "Удалить оператора",
+      'data-placement' => 'bottom', method: :delete
         = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"

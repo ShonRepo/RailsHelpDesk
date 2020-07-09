@@ -1,7 +1,10 @@
 h1 Администраторы
 
 
-= link_to 'Новый администратор', new_admin_admin_path, class: 'btn float-right btn-outline-success '
+= link_to 'Новый администратор', new_admin_admin_path, class: 'btn float-right btn-outline-success tag-tooltip',
+                :data => {:toggle=>"tooltip"},
+                'data-original-title' => "Создать администратора",
+                'data-placement' => 'bottom'
 table.table
   thead
     tr

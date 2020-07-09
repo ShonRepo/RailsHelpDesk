@@ -1,7 +1,10 @@
 h1 Статусы
 
 
-= link_to 'Новый тип', new_admin_status_path, class: 'btn float-right btn-outline-success '
+= link_to 'Новый тип', new_admin_status_path, class: 'btn float-right btn-outline-success tag-tooltip',
+                :data => {:toggle=>"tooltip"},
+                'data-original-title' => "Создать новый статус заявки",
+                'data-placement' => 'bottom'
 table.table
   thead
     tr

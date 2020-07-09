@@ -17,11 +17,19 @@ tr
   - else
     td= '-'
   td.btn-group role="group"
-      = link_to [ :admin, ticket ], class: 'btn btn-outline-info btn-sm'
+      = link_to [ :admin, ticket ], class: 'btn btn-outline-info btn-sm tag-tooltip',
+                      :data => {:toggle=>"tooltip"},
+                      'data-original-title' => "Перейти на страницу заявки",
+                      'data-placement' => 'bottom'
         = octicon "repo-push", :height => 32,  :class => "right left", :"aria-label" => "hi"
 
-      = link_to [ :edit, :admin, ticket ], class: 'btn btn-outline-primary btn-sm'
+      = link_to [ :edit, :admin, ticket ], class: 'btn btn-outline-primary btn-sm tag-tooltip',
+                      :data => {:toggle=>"tooltip"},
+                      'data-original-title' => "Изменить заявку",
+                      'data-placement' => 'bottom'
         = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
 
-      = link_to  [ :admin, ticket ], class: 'btn btn-outline-danger btn-sm',data: {confirm: "хотите удалить '#{ticket.title}'"}, method: :delete
+      = link_to  [ :admin, ticket ], class: 'btn btn-outline-danger btn-sm tag-tooltip',data: {confirm: "хотите удалить '#{ticket.title}'", :toggle=>"tooltip"},
+      'data-original-title' => "Удалить заявку",
+      'data-placement' => 'bottom', method: :delete
         = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"

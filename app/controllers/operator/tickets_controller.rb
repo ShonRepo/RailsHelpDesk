@@ -24,6 +24,7 @@ class Operator::TicketsController < Operator::BaseController
   end
 
   def create
+
     if Ticket.where(ticket_params)
       @Ticket = Ticket.new(ticket_params)
       @Ticket[:uuid] = SecureRandom.hex(10)
