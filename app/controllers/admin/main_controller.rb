@@ -7,5 +7,4 @@ class Admin::MainController < Admin::BaseController
   def set_active_main_menu_item
     @main_menu[:admin][:active] = true
   end
-
 end
