@@ -19,7 +19,7 @@ class Admin::TypesController < Admin::BaseController
       redirect_to admin_types_path, notice: 'Тип успешно создан'
     else
       add_breadcrumb "новый тип", new_admin_type_path, title: 'Типы'
-      flash.now[:alert] = 'не удаось создать тип'
+      flash.now[:alert] = 'не удалось создать тип'
       render :new
     end
   end

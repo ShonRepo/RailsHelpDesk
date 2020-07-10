@@ -1,0 +1,18 @@
+h1 Типы
+
+
+= link_to 'Добавить email', new_admin_confirmed_path, class: 'btn float-right btn-outline-success tag-tooltip',
+                :data => {:toggle=>"tooltip"},
+                'data-original-title' => "Добавить новый email",
+                'data-placement' => 'bottom'
+table.table
+  thead
+    tr
+      th scope="col"  #
+      th scope="col"  email
+
+  tbody
+    =render @Confirmeds
+= paginate @Confirmeds, theme: 'twitter-bootstrap-4',
+                    pagination_class: "pagination-sm",
+                   nav_class: "d-inline-b"

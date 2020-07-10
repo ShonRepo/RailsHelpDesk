@@ -18,7 +18,7 @@ class Admin::OperatorsController < Admin::BaseController
       redirect_to admin_operators_path, notice: 'Оператор успешно создан'
     else
       add_breadcrumb "новый Оператор", new_admin_operator_path, title: 'Операторы'
-      flash.now[:alert] = 'не удаось создать Оператора'
+      flash.now[:alert] = 'не удалось создать Оператора'
       render :new
     end
   end

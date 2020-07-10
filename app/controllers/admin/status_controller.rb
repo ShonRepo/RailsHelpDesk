@@ -19,7 +19,7 @@ class Admin::StatusController < Admin::BaseController
       redirect_to admin_status_path, notice: 'Статус успешно создан'
     else
       add_breadcrumb "новый статус", new_admin_status_path, title: 'Статусы'
-      flash.now[:alert] = 'не удаось создать статус'
+      flash.now[:alert] = 'не удалось создать статус'
       render :new
     end
   end

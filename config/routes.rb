@@ -3,15 +3,11 @@ Rails.application.routes.draw do
 
   get 'pages/start'
   namespace :operator do
-    #resources :tickets, only: [:index, :show, :edit, :update, :new]
     resources :tickets, only: [:index, :show, :edit, :update, :new] do
       resources :tinymce_images, only: :create, owner: 'ticket'
-
-
     end
+
     resources :answers, only: [:create]
-    #get '/operators/edit'
-    #put '/operators/update'
     resources :operators, only: [:edit,:update]
     resources :tickets do
       resources :answers, only: [:index, :destroy, :create, :new]
@@ -39,6 +35,10 @@ Rails.application.routes.draw do
     resources :admins,  except: :show
 
     resources :statuses,  except: :show
+
+    resources :confirmeds,  except: :show
+
+    put 'confirmeds/:id/switch' , to: 'confirmeds#switch', as: 'confirmeds_switch'
 
     resources :operators,  except: :show
 

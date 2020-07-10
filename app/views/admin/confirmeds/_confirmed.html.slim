@@ -1,0 +1,31 @@
+tr
+  td= confirmed.id
+  td= confirmed.email
+  td
+    .btn-group role="group"
+
+    - if confirmed.enable
+      = link_to admin_confirmeds_switch_path(confirmed),method: :put, class: 'btn btn-outline-primary btn-sm tag-tooltip',
+                      :data => {:toggle=>"tooltip"},
+                      'data-original-title' => "Выключить email",
+                      'data-placement' => 'bottom'
+        = octicon "dot-fill", :height => 32,  :class => "right left",fill: 'green', :"aria-label" => "hi"
+    - else
+      = link_to admin_confirmeds_switch_path(confirmed),method: :put, class: 'btn btn-outline-primary btn-sm tag-tooltip',
+                    :data => {:toggle=>"tooltip"},
+                    'data-original-title' => "Включить email",
+                    'data-placement' => 'bottom'
+        = octicon "dot-fill", :height => 32,  :class => "right left",fill: 'red', :"aria-label" => "hi"
+
+
+    = link_to [ :edit, :admin, confirmed ], class: 'btn btn-outline-primary btn-sm tag-tooltip',
+                      :data => {:toggle=>"tooltip"},
+                      'data-original-title' => "Изменить email",
+                      'data-placement' => 'bottom'
+        = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
+
+    = link_to  [ :admin, confirmed ], class: 'btn btn-outline-danger btn-sm tag-tooltip',
+        data: {confirm: "хотите удалить '#{confirmed.email}'", :toggle=>"tooltip"},
+        'data-original-title' => "Удалить email",
+        'data-placement' => 'bottom', method: :delete
+        = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"

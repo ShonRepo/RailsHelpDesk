@@ -1,0 +1,15 @@
+= simple_form_for [:admin,@Confirmed ] do |f|
+
+  = f.input :email ,label: 'email'
+
+  .btn_box
+    = f.button :submit, 'Добавить', class: 'btn btn-outline-success tag-tooltip',
+                    :data => {:toggle=>"tooltip"},
+                    'data-original-title' => "Добавить email",
+                    'data-placement' => 'bottom'
+    = link_to 'Отмена', admin_confirmeds_path, class: 'btn btn-light'
+    = link_to 'Удалить' ,[ :admin, @Confirmed ], class: 'btn btn-outline-danger tag-tooltip',
+    data: {confirm: "хотите удалить '#{@Confirmed.email}'", :toggle=>"tooltip"},
+    'data-original-title' => "Удалить email",
+    'data-placement' => 'bottom',
+    method: :delete if @Confirmed.persisted?

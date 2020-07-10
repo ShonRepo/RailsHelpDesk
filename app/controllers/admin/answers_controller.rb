@@ -12,7 +12,7 @@ class Admin::AnswersController < ApplicationController
     if @Answers.save
       redirect_to [:admin, @Ticket]
     else
-      flash.now[:alert] = 'не удаось добавить ответ'
+      flash.now[:alert] = 'не удалось добавить ответ'
       redirect_to [:admin, @Ticket]
     end
   end
