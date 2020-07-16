@@ -7,7 +7,7 @@
                     :data => {:toggle=>"tooltip"},
                     'data-original-title' => "Сохранить тип заявки",
                     'data-placement' => 'bottom'
-    = link_to 'Отмена', admin_statuses_path, class: 'btn btn-light'
+    = link_to 'Отмена', admin_statuses_path, class: 'btn btn-outline-dark'
     = link_to 'Удалить' ,[ :admin, @Status ], class: 'btn btn-outline-danger tag-tooltip',data: {confirm: "хотите удалить '#{@Status.name}'", :toggle=>"tooltip"},
     'data-original-title' => "Удалить статус заявки",
     'data-placement' => 'bottom', method: :delete if @Status.persisted?

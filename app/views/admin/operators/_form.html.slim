@@ -10,7 +10,7 @@
                     :data => {:toggle=>"tooltip"},
                     'data-original-title' => "Создать оператора",
                     'data-placement' => 'bottom'
-    = link_to 'Отмена', admin_operators_path, class: 'btn btn-light'
+    = link_to 'Отмена', admin_operators_path, class: 'btn btn-outline-dark'
     = link_to 'Удалить' ,[ :admin, @Operator ], class: 'btn btn-outline-danger tag-tooltip',data: {confirm: "хотите удалить '#{@Operator.last_name}'", :toggle=>"tooltip"},
     'data-original-title' => "Удалить оператора",
     'data-placement' => 'bottom', method: :delete if @Operator.persisted?

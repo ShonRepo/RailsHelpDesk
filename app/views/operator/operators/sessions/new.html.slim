@@ -11,5 +11,5 @@ h2 войти
     = f.input :remember_me , label: 'Запомнить меня',as: :boolean if devise_mapping.rememberable?
   .form-actions
     = f.button :submit, "войти", class: 'btn btn-primary'
+    = link_to 'Отмена', root_path, class: 'btn btn-outline-dark'
 = render "devise/shared/links"
-  

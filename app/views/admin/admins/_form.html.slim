@@ -10,7 +10,7 @@
                     :data => {:toggle=>"tooltip"},
                     'data-original-title' => "Сохранить администратора",
                     'data-placement' => 'bottom'
-    = link_to 'Отмена', admin_admins_path, class: 'btn btn-light'
+    = link_to 'Отмена', admin_admins_path, class: 'btn btn-outline-dark'
     = link_to 'Удалить' ,[ :admin, @Admin ], class: 'btn btn-outline-danger tag-tooltip',data: {confirm: "хотите удалить '#{@Admin.last_name}'", :toggle=>"tooltip"},
     'data-original-title' => "Удалить администратора",
     'data-placement' => 'bottom', method: :delete if @Admin.persisted?

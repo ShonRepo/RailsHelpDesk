@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  get 'pages/start'
+  root to: 'pages#start'
   namespace :operator do
     resources :tickets, only: [:index, :show, :edit, :update, :new] do
       resources :tinymce_images, only: :create, owner: 'ticket'

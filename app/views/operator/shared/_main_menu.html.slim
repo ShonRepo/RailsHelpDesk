@@ -1,5 +1,8 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  = link_to 'HelpDesk', operator_root_path, class: 'navbar-brand'
+  - if current_operator
+    = link_to 'HelpDesk', operator_root_path, class: 'navbar-brand'
+  - else
+    = link_to 'HelpDesk', root_path, class: 'navbar-brand'
   button.navbar-toggler aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button"
     span.navbar-toggler-icon
   #navbarNavAltMarkup.collapse.navbar-collapse
