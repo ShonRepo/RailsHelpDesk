@@ -49,12 +49,6 @@ Rails.application.configure do
   # number of complex assets.
 
   # Suppress logger output for asset requests.
-  config.assets.quiet = true
-  config.assets.compress=false
-  config.assets.precompile+=%w[bootstrap-alerts.js]#Lots of other space separated files
-  config.assets.compile=false
-  config.assets.digest=true
-  config.assets.manifest=Rails.root.join("public/assets")
   config.assets.debug=true
 
   # Raises error for missing translations
