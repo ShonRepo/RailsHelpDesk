@@ -15,6 +15,7 @@ gem 'octicons_helper'
 gem "breadcrumbs_on_rails"
 
 gem 'bootstrap', '~> 4.4.1'
+gem 'rails_12factor'
 
 gem 'rails-i18n'
 gem 'slim-rails'
