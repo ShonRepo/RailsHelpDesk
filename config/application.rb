@@ -12,6 +12,9 @@ module HelpDesk
     config.load_defaults 5.2
     config.i18n.default_locale = :ru
     config.time_zone = 'Moscow'
+    config.serve_static_files = true
+    config.serve_static_assets = true
+    config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

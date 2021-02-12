@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: helpdesk_production
-  username: helpdesk
+  username: postgres
   password: <%= ENV['TESTPLANER_DATABASE_PASSWORD'] %>
