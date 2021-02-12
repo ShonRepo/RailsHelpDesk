@@ -9,7 +9,7 @@ gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 
 gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 
 gem 'octicons_helper'
 gem "breadcrumbs_on_rails"
