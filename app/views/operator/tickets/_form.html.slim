@@ -3,8 +3,9 @@
   = f.input :email
   = f.association :type, collection: Type.all.decorate, label_method: :type_number, label: 'Тип'
   - if @Ticket.persisted?
-    .card
-      p #{ @Ticket.body.html_safe}
+    - if @Ticket.body?
+      .card
+        p #{ @Ticket.body.html_safe}
   .btn_box
     = f.button :submit , 'Продолжить' , class: 'btn btn-outline-success tag-tooltip',
                     :data => {:toggle=>"tooltip"},

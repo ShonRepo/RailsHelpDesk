@@ -1,0 +1,18 @@
+= link_to 'Назад', tickets_index_path, class: 'btn btn-outline-dark float-right tag-tooltip',
+                :data => {:toggle=>"tooltip"},
+                'data-original-title' => "Вернуться к поиску заявок",
+                'data-placement' => 'bottom'
+= link_to 'Изменить',  class: 'btn btn-outline-info float-right tag-tooltip',
+                :data => {:toggle=>"tooltip"},
+                'data-original-title' => "Изменить заявку",
+                'data-placement' => 'bottom'
+h1 Заявка: #{ @Ticket.title}
+hr
+h2 Тип: #{@Ticket.type.name}
+hr
+h6 подробная информация
+- if @Ticket.body?
+  p #{@Ticket.body.html_safe}
+
+= render 'operator/answers/answerform'
+= render @Ticket.answers.order(created_at: :desc).decorate

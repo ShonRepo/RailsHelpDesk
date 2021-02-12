@@ -24,13 +24,12 @@ class Operator::TicketsController < Operator::BaseController
   end
 
   def create
-
     if Ticket.where(ticket_params)
       @Ticket = Ticket.new(ticket_params)
       @Ticket[:uuid] = SecureRandom.hex(10)
       @Ticket[:operator_id] = current_operator.id;
       @Ticket[:status_id] = 2;
-      if@Ticket.save
+      if @Ticket.save
         redirect_to operator_stage_path(@Ticket), notice: 'Добавьте описание'
       else
         add_breadcrumb "новая заявка", new_operator_ticket_path, title: 'Заявки'
@@ -56,11 +55,16 @@ class Operator::TicketsController < Operator::BaseController
   end
 
   def show
-    @main_menu[:meticket][:active] = true
     add_breadcrumb "Мои заявки", :operator_indexthis_path
+    add_breadcrumb "Заявка '#{@Ticket.title}'", :operator_ticket_path
+    @main_menu[:allticket][:active] = true
   end
 
   def edit
+    add_breadcrumb "Мои заявки", :operator_indexthis_path
+    add_breadcrumb "Изменить заявку '#{@Ticket.title}'", :edit_operator_ticket_path
+    @main_menu[:allticket][:active] = true
+
   end
 
   def update
@@ -68,7 +72,7 @@ class Operator::TicketsController < Operator::BaseController
       @Ticket[:operator_id] = current_operator.id;
       @Ticket[:status_id] = 2;
     end
-    if @Ticket.update!(ticket_params)
+    if @Ticket.update(ticket_params)
       redirect_to operator_ticket_path(@Ticket), notice: 'Заявка успешно изменена'
     else
       breadcrumb_update
@@ -78,6 +82,7 @@ class Operator::TicketsController < Operator::BaseController
   end
 
   private
+
   def set_ticket
     @Ticket = Ticket.find(params[:id])
   end

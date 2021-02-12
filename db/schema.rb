@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_07_09_134957) do
 
-  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_07_09_134957) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "answers", force: :cascade do |t|
     t.text "comment"
     t.bigint "ticket_id"
     t.datetime "created_at", null: false
@@ -40,14 +43,14 @@ ActiveRecord::Schema.define(version: 2020_07_09_134957) do
     t.index ["ticket_id"], name: "index_answers_on_ticket_id"
   end
 
-  create_table "confirmeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "confirmeds", force: :cascade do |t|
     t.string "email"
     t.boolean "enable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "operators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "operators", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
@@ -64,13 +67,13 @@ ActiveRecord::Schema.define(version: 2020_07_09_134957) do
     t.index ["reset_password_token"], name: "index_operators_on_reset_password_token", unique: true
   end
 
-  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "statuses", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "tickets", force: :cascade do |t|
     t.string "title"
     t.string "email"
     t.text "body"
@@ -85,7 +88,7 @@ ActiveRecord::Schema.define(version: 2020_07_09_134957) do
     t.index ["type_id"], name: "index_tickets_on_type_id"
   end
 
-  create_table "tinymce_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "tinymce_images", force: :cascade do |t|
     t.string "file"
     t.string "owner_type"
     t.bigint "owner_id"
@@ -94,7 +97,7 @@ ActiveRecord::Schema.define(version: 2020_07_09_134957) do
     t.index ["owner_type", "owner_id"], name: "index_tinymce_images_on_owner_type_and_owner_id"
   end
 
-  create_table "types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "types", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,8 @@
+h1 Описание
+= simple_form_for [ @Ticket ] do |f|
+  = f.input :body , label: 'Опишите проблему', input_html: { class: 'tinymce', rows: 20, cols: 120}
+  = tinymce :alternate, language: 'ru', uploadimage_form_url: ticket_tinymce_images_path(@Ticket)
+  = f.button :submit, 'Сохранить', class: 'btn btn-outline-success tag-tooltip',
+                  :data => {:toggle=>"tooltip"},
+                  'data-original-title' => "Сохранить описание заявки",
+                  'data-placement' => 'bottom'

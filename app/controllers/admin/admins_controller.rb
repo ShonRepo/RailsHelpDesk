@@ -23,11 +23,10 @@ class Admin::AdminsController < Admin::BaseController
     end
   end
 
-  
+
 
   def edit
     breadcrumb_update
-
   end
 
   def update

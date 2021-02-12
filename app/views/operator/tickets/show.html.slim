@@ -2,7 +2,7 @@
                 :data => {:toggle=>"tooltip"},
                 'data-original-title' => "Вернуться к списку моих заявок",
                 'data-placement' => 'bottom'
-= link_to 'Изменить', [:edit,:operator,@Ticket ], class: 'btn btn-outline-info float-right tag-tooltip',
+= link_to 'Изменить', [:edit, :operator, @Ticket ], class: 'btn btn-outline-info float-right tag-tooltip',
                 :data => {:toggle=>"tooltip"},
                 'data-original-title' => "Изменить заявку",
                 'data-placement' => 'bottom'
@@ -11,8 +11,8 @@ hr
 h2 Тип: #{@Ticket.type.name}
 hr
 h6 подробная информация
-
-p #{@Ticket.body.html_safe}
+- if @Ticket.body?
+  p #{@Ticket.body.html_safe}
 
 = render 'operator/answers/answerform'
 = render @Ticket.answers.order(created_at: :desc).decorate

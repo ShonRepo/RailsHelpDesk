@@ -1,7 +1,21 @@
 Rails.application.routes.draw do
 
 
+
+  get 'tickets/index'
+  get 'tickets/new'
+  get 'tickets/:id/show', to: 'tickets#show', as: 'tickets_show'
+  get 'tickets/search', to: 'tickets#search', as: 'search'
+  get 'tickets/:id/create_stage', to: 'tickets#create_stage' , as: 'stage'
+  get 'tickets/edit'
+  get 'tickets/create'
+  get 'tickets/update'
+  get 'tickets/delete'
   root to: 'pages#start'
+
+  resources :tickets do
+    resources :tinymce_images, only: :create, owner: 'ticket'
+  end
   namespace :operator do
     resources :tickets, only: [:index, :show, :edit, :update, :new] do
       resources :tinymce_images, only: :create, owner: 'ticket'

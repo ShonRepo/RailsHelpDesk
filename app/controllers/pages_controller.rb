@@ -1,6 +1,6 @@
 class PagesController < BaseController
 
-  add_breadcrumb "Главная", :root_path
+  # add_breadcrumb "Главная", :root_path
 
   def start
   end
