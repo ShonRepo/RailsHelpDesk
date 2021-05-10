@@ -1,15 +1,15 @@
-h1 Статусы
+h1= I18n.t('status.statuses')
 
 
 = link_to 'Новый тип', new_admin_status_path, class: 'btn float-right btn-outline-success tag-tooltip',
                 :data => {:toggle=>"tooltip"},
-                'data-original-title' => "Создать новый статус заявки",
+                'data-original-title' => I18n.t('status.create'),
                 'data-placement' => 'bottom'
 table.table
   thead
     tr
       th scope="col"  #
-      th scope="col"  название
+      th scope="col"= I18n.t('status.name')
 
   tbody
     =render @Statuses

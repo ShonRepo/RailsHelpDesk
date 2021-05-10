@@ -15,7 +15,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
   ul.nav.navbar-nav.navbar-right
     - if !current_admin
       li.dropdown
-        a.dropdown href="#" войти
+        a.dropdown href="#" = I18n.t('log_in')
     - if current_admin
         li.dropdown
           a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"

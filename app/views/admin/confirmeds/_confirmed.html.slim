@@ -7,25 +7,25 @@ tr
     - if confirmed.enable
       = link_to admin_confirmeds_switch_path(confirmed),method: :put, class: 'btn btn-outline-primary btn-sm tag-tooltip',
                       :data => {:toggle=>"tooltip"},
-                      'data-original-title' => "Выключить email",
+                      'data-original-title' => I18n.t('email.disable'),
                       'data-placement' => 'bottom'
         = octicon "dot-fill", :height => 32,  :class => "right left",fill: 'green', :"aria-label" => "hi"
     - else
       = link_to admin_confirmeds_switch_path(confirmed),method: :put, class: 'btn btn-outline-primary btn-sm tag-tooltip',
                     :data => {:toggle=>"tooltip"},
-                    'data-original-title' => "Включить email",
+                    'data-original-title' => I18n.t('email.enable'),
                     'data-placement' => 'bottom'
         = octicon "dot-fill", :height => 32,  :class => "right left",fill: 'red', :"aria-label" => "hi"
 
 
     = link_to [ :edit, :admin, confirmed ], class: 'btn btn-outline-primary btn-sm tag-tooltip',
                       :data => {:toggle=>"tooltip"},
-                      'data-original-title' => "Изменить email",
+                      'data-original-title' => I18n.t('email.edit'),
                       'data-placement' => 'bottom'
         = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
 
     = link_to  [ :admin, confirmed ], class: 'btn btn-outline-danger btn-sm tag-tooltip',
-        data: {confirm: "хотите удалить '#{confirmed.email}'", :toggle=>"tooltip"},
-        'data-original-title' => "Удалить email",
+        data: {confirm: I18n.t('want_delete', name: confirmed.email), :toggle=>"tooltip"},
+        'data-original-title' => I18n.t('email.delete'),
         'data-placement' => 'bottom', method: :delete
-        = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"
+        = octicon "trash", :height => 32,  :class => "right left", :"aria-label" => "hi"

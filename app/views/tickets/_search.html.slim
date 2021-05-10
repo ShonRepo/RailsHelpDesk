@@ -1,6 +1,6 @@
 = form_tag("search", method: "get") do
-  h4 Найти:
+  h4 =I18n.t('search')
   = text_field_tag :search, params[:search], class: 'form-control'
   .btn_box
-    = submit_tag "Найти" , class: 'btn btn-primary'
-    = link_to 'Отмена', root_path, class: 'btn btn-outline-dark'
+    = submit_tag I18n.t('search') , class: 'btn btn-primary'
+    = link_to I18n.t('cancel'), root_path, class: 'btn btn-outline-dark'

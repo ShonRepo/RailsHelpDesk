@@ -1,6 +1,6 @@
-h1 Мои заявки
+h1= I18n.t('ticket.all_my_ticket')
 form action="indexthis" method="GET"
-  input name="all" type="checkbox" Отобразить завершенные
+  input name="all" type="checkbox" = I18n.t('ticket.display_completed_tasks')
   input.btn.float-right.btn-outline-info type="submit" value="Отобразить"
 
 
@@ -8,12 +8,12 @@ form action="indexthis" method="GET"
     thead
       tr
         th scope="col"  uuid
-        th scope="col"  Заголовок
+        th scope="col"= I18n.t('ticket.heading')
         th scope="col"  Email
-        th scope="col"  Тип
+        th scope="col"= I18n.t('ticket.type')
         th scope="col"
     tbody
     =render @Tickets
   = paginate @Tickets, theme: 'twitter-bootstrap-4',
-                        pagination_class: "pagination-sm",
+                       pagination_class: "pagination-sm",
                        nav_class: "d-inline-b"

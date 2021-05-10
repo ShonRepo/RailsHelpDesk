@@ -1,13 +1,13 @@
 = simple_form_for [:admin,@Status ] do |f|
 
-  = f.input :name ,label: 'название'
+  = f.input :name ,label: I18n.t('status.name')
 
   .btn_box
-    = f.button :submit, 'Сохранить', class: 'btn btn-outline-success tag-tooltip',
+    = f.button :submit, I18n.t('save'), class: 'btn btn-outline-success tag-tooltip',
                     :data => {:toggle=>"tooltip"},
                     'data-original-title' => "Сохранить тип заявки",
                     'data-placement' => 'bottom'
-    = link_to 'Отмена', admin_statuses_path, class: 'btn btn-outline-dark'
-    = link_to 'Удалить' ,[ :admin, @Status ], class: 'btn btn-outline-danger tag-tooltip',data: {confirm: "хотите удалить '#{@Status.name}'", :toggle=>"tooltip"},
-    'data-original-title' => "Удалить статус заявки",
+    = link_to I18n.t('cancel'), admin_statuses_path, class: 'btn btn-outline-dark'
+    = link_to I18n.t('delete') ,[ :admin, @Status ], class: 'btn btn-outline-danger tag-tooltip',data: {confirm: I18n.t('want_delete', name: @Status.name), :toggle=>"tooltip"},
+    'data-original-title' => I18n.t('status.delete'),
     'data-placement' => 'bottom', method: :delete if @Status.persisted?

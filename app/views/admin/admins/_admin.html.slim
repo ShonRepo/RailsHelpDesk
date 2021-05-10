@@ -8,11 +8,11 @@ tr
     .btn-group role="group"
       = link_to [ :edit, :admin, admin ], class: 'btn btn-outline-primary btn-sm tag-tooltip',
                       :data => {:toggle=>"tooltip"},
-                      'data-original-title' => "Сохранить оператора",
+                      'data-original-title' => I18n.t('operator.save'),
                       'data-placement' => 'bottom'
         = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
 
       = link_to  [ :admin, admin ], class: 'btn btn-outline-danger btn-sm tag-tooltip',data: {confirm: "хотите удалить '#{admin.last_name}'", :toggle=>"tooltip"},
       'data-original-title' => "Удалить администратора",
       'data-placement' => 'bottom', method: :delete
-        = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"
+        = octicon "trash", :height => 32,  :class => "right left", :"aria-label" => "hi"

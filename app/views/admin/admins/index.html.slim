@@ -1,4 +1,4 @@
-h1 Администраторы
+h1= I18n.t('admin.admins')
 
 
 = link_to 'Новый администратор', new_admin_admin_path, class: 'btn float-right btn-outline-success tag-tooltip',
@@ -9,10 +9,10 @@ table.table
   thead
     tr
       th scope="col"  #
-      th scope="col"  имя
-      th scope="col"  фамилия
+      th scope="col"=  I18n.t('login.first_name')
+      th scope="col"=  I18n.t('login.last_name')
       th scope="col"  Email
-      th scope="col"  Дата входа
+      th scope="col"=  I18n.t('login.login_date')
       th scope="col"
   tbody
     =render @Admins

@@ -1,6 +1,6 @@
 class Admin::ConfirmedsController < Admin::BaseController
   before_action :set_confirmed, only: [:edit, :update, :destroy,:switch]
-  add_breadcrumb "Подтвержденные email", :admin_confirmeds_path
+  add_breadcrumb I18n.t('email.confirmed'), :admin_confirmeds_path
 
 
 
@@ -10,28 +10,28 @@ class Admin::ConfirmedsController < Admin::BaseController
 
   def new
       @Confirmed = Confirmed.new
-      add_breadcrumb "Добавление email", new_admin_confirmed_path, title: 'Email'
+      add_breadcrumb I18n.t('email.add'), new_admin_confirmed_path, title: 'Email'
   end
 
   def create
     @Confirmed = Confirmed.new(confirmed_params)
     @Confirmed[:enable] = true
-    if@Confirmed.save
+    if @Confirmed.save
       redirect_to admin_confirmeds_path, notice: 'Email успешно добавлен'
     else
-      add_breadcrumb "Добавление email", new_admin_confirmed_path, title: 'Email'
-      flash.now[:alert] = 'не удалось добавить email'
+      add_breadcrumb I18n.t('email.add'), new_admin_confirmed_path, title: 'Email'
+      flash.now[:alert] = I18n.t('email.do_not_created')
       render :new
     end
   end
 
   def switch
     @Confirmed[:enable] = !@Confirmed[:enable]
-    if@Confirmed.save
-      redirect_to admin_confirmeds_path, notice: "Статус email'а успешно изменен"
+    if @Confirmed.save
+      redirect_to admin_confirmeds_path, notice: I18n.t('email.change_status')
     else
 
-      flash.now[:alert] = "не удалось изменить статус email'а"
+      flash.now[:alert] = I18n.t('email.do_not_change_status')
       render :index
     end
   end
@@ -41,28 +41,27 @@ class Admin::ConfirmedsController < Admin::BaseController
   end
 
   def update
-    if@Confirmed.update(confirmed_params)
-      redirect_to admin_confirmeds_path, notice: 'email успешно изменен'
+    if @Confirmed.update(confirmed_params)
+      redirect_to admin_confirmeds_path, notice: I18n.t('email.updated')
     else
       breadcrumb_update
-      flash.now[:alert] = 'не удалось изменить email'
+      flash.now[:alert] = I18n.t('email.do_not_updated')
       render :edit
     end
   end
 
   def destroy
     if @Confirmed.destroy
-      redirect_to admin_confirmeds_path, notice: 'email удален'
+      redirect_to admin_confirmeds_path, notice: I18n.t('email.deleted')
     else
-      redirect_to admin_confirmeds_path, alert: 'не удалось'
-
+      redirect_to admin_confirmeds_path, alert: I18n.t('do_not')
     end
   end
 
   private
 
   def breadcrumb_update
-    add_breadcrumb "изменить '#{@Confirmed.email}'"  ,[:edit, :admin, @Confirmed]
+    add_breadcrumb I18n.t('change_name', name: @Confirmed.email), [:edit, :admin, @Confirmed]
   end
 
   def set_confirmed
@@ -74,7 +73,6 @@ class Admin::ConfirmedsController < Admin::BaseController
   end
 
   def confirmed_params
-    params.require(:confirmed).permit(:email,:active)
+    params.require(:confirmed).permit(:email, :active)
   end
-
 end

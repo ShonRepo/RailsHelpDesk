@@ -6,25 +6,23 @@ class Admin::AnswersController < ApplicationController
   end
 
   def create
-
     @Answers = @Ticket.answers.create(answers_params)
     @Answers[:sender] = current_admin.email
     if @Answers.save
       redirect_to [:admin, @Ticket]
     else
-      flash.now[:alert] = 'не удалось добавить ответ'
+      flash.now[:alert] = I18n.t('admin.do_not_created')
       redirect_to [:admin, @Ticket]
     end
   end
 
   private
+
   def set_ticket
     @Ticket = Ticket.find(params[:ticket_id])
-
   end
 
   def answers_params
-    params.require(:answer).permit(:comment,:ticket_id,:sender)
+    params.require(:answer).permit(:comment, :ticket_id, :sender)
   end
-
 end

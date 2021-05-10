@@ -1,33 +1,146 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  add: 'Add'
+  main: 'Home'
+  welcome: 'Welcome!'
+  log_in: 'Login'
+  cancel: 'Cancel'
+  continue: 'Continue'
+  search: 'Find'
+  detailed_information: 'Detailed information'
+  comment: 'Reply'
+  send_comment: 'Send reply'
+  send: 'Send'
+  change: 'Change'
+  back: 'Back'
+  save_data: 'Save data'
+  description: 'Description'
+  updated_at: 'Date modified'
+  save: 'Save'
+  save_changes: 'Save Changes'
+  save_discription: 'Save order description'
+  add_discription: 'Add description'
+  heading: 'Heading'
+  display: 'Display'
+  do_not: 'Failed'
+  change_name: 'Change: %{name}'
+  delete: 'delete'
+  want_delete: 'Go to delete %{name}?'
+  type:
+    name: 'Name'
+    types: 'Types'
+    updated: 'type changed successfully'
+    created: 'type was created successfully'
+    deleted: 'type deleted'
+    new: 'New type'
+    do_not_updated: 'Failed to change type'
+    do_not_created: 'Failed to add type'
+    add: 'Adding a type'
+    edit: 'Change type'
+    create: 'Create Type'
+  answer:
+    do_not_created: 'Failed to add response'
+  admin:
+    admins: 'Administrators'
+    updated: 'Admin changed successfully'
+    created: 'Administrator was created successfully'
+    deleted: 'Administrator deleted'
+    new: 'New administrator'
+    do_not_updated: 'Failed to change Admin'
+    do_not_created: 'Failed to add Administrator'
+    add: 'Add Administrator'
+    save: 'Save admin'
+    update: 'Change admin'
+    delete: 'Delete administrator'
+    create: 'Create Administrator'
+  operator:
+    operator: 'Operator'
+    operators: 'Operators'
+    updated: 'Operator changed successfully'
+    created: 'The statement was created successfully'
+    deleted: 'Operator deleted'
+    new: 'New operator'
+    do_not_updated: 'Failed to change operator'
+    do_not_created: 'Failed to add operator'
+    add: 'Add operator'
+    save: 'Save operator'
+    delete: 'Delete operator'
+    create: 'Create operator'
+    first_name: 'First Name'
+    last_name: 'Last Name'
+  email:
+    confirmed: 'Confirmed Email'
+    add: 'Add Email'
+    add_new: 'Add email'
+    do_not_created: 'Failed to add Email'
+    updated: 'Email changed successfully'
+    deleted: 'Email deleted'
+    change_status: 'Email status changed successfully'
+    do_not_change_status: 'Failed to change email status'
+    do_not_updated: 'Failed to change email'
+    disable: 'Disable email'
+    enable: 'Enable email'
+    edit: 'Change email'
+    delete: 'Delete email'
+  status:
+    status: 'Status'
+    name: 'Name'
+    create: 'Create new status'
+    status_created: 'Status created successfully'
+    status_updated: 'Status updated successfully'
+    do_not_create_status: 'Failed to create status'
+    do_not_update_status: 'Failed to update status'
+    new_status: 'New status'
+    status_destroy: 'Status deleted'
+    delete: 'Delete status'
+    update: 'Change status'
+    statuses: 'Status'
+  login:
+    my_data: 'My data'
+    password: 'Password'
+    repeat_password: 'Repeat password'
+    remember_me: 'Remember me'
+    Forgot_your_password: 'Forgot password'
+    restore_password: 'Restore password'
+    send_instruction: 'Send instructions to change password'
+    updated: 'Your details have been successfully updated'
+    do_not_updated: 'Failed to update your data'
+    repeat_password: 'Repeat password'
+    first_name: 'Name'
+    last_name: 'Last Name'
+    login_date: 'Login date'
+  ticket:
+    describe_the_problem: 'Describe the problem'
+    email_not_in_white_list: 'Email is not in the list or it is blocked'
+    ticket: 'Application: %{name}'
+    ticket_word: 'Ticket'
+    tickets: 'Tickets'
+    my_ticket: 'My ticket'
+    new_ticket: 'New Ticket'
+    create_ticket: 'Create Ticket'
+    edit_ticket: 'Edit Ticket'
+    delete_ticket: 'Delete ticket'
+    delited_ticket: 'Ticket deleted'
+    edit_ticket_name: 'Edit ticket: %{name}'
+    save_ticket: 'Save ticket'
+    show_my_ticket: 'View my ticket'
+    show_ticket: 'View ticket'
+    do_not_create: 'failed to create ticket'
+    problem: 'Problem'
+    search_my_ticket: 'Find my ticket'
+    type: 'Type'
+    type_text: 'Type: %{type}'
+    heading: 'Heading'
+    uuid: 'Order ID: %{uuid}'
+    not_my_ticket: 'Cant get ticket details of another user'
+    save_uuid: 'dont forget to save the ticket id'
+    ticket_changed_successfully: 'Ticket changed successfully'
+    do_not_edit_ticket: 'Failed to edit ticket'
+    go_back_to_list_ticket: 'Return to order search'
+    ticket_do_not_exist: 'No such ticket exists'
+    available_ticket: 'Available tickets'
+    all_my_ticket: 'My tickets'
+    this_not_your_ticket: 'This is not your ticket'
+    this_ticket_accepted: 'This ticket has already been accepted'
+    ticket_time_created: 'Ticket was created at %{created_at}'
+    accept_ticket: 'Accept ticket %{name}'
+    display_completed_tasks: 'Display Completed'

@@ -1,4 +1,4 @@
-= simple_form_for [:operator,@Ticket, @Ticket.answers.build] do |f|
+= simple_form_for [@Ticket, @Ticket.answers.build] do |f|
 
   = f.input :comment ,label: I18n.t('comment')
   .btn_box

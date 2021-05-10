@@ -1,6 +1,5 @@
 class PagesController < BaseController
-
-  # add_breadcrumb "Главная", :root_path
+  # add_breadcrumb I18n.t('main'), :root_path
 
   def start
   end
@@ -16,6 +15,6 @@ class PagesController < BaseController
   end
 
   def confirmed_params
-    params.require(:confirmed).permit(:email,:active)
+    params.require(:confirmed).permit(:email, :active)
   end
 end

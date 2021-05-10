@@ -1,25 +1,23 @@
 class Admin::StatusController < Admin::BaseController
   before_action :set_status, only: [:edit, :update, :destroy]
-    add_breadcrumb "статусы", :admin_statuses_path
-
-
+  add_breadcrumb I18n.t('status.statuses'), :admin_statuses_path
 
   def index
     @Status = Status.order(:name).page params[:page]
   end
 
   def new
-      @Status = Status.new
-      add_breadcrumb "новый статус", new_admin_status_path, title: 'Статусы'
+    @Status = Status.new
+    add_breadcrumb I18n.t('status.new_status'), new_admin_status_path, title: I18n.t('status.statuses')
   end
 
   def create
     @Status = Status.new(status_params)
     if@Status.save
-      redirect_to admin_status_path, notice: 'Статус успешно создан'
+      redirect_to admin_status_path, notice: I18n.t('status.status_created')
     else
-      add_breadcrumb "новый статус", new_admin_status_path, title: 'Статусы'
-      flash.now[:alert] = 'не удалось создать статус'
+      add_breadcrumb I18n.t('status.new_status'), new_admin_status_path, title: I18n.t('status.statuses')
+      flash.now[:alert] = I18n.t('status.do_not_create_status')
       render :new
     end
   end
@@ -30,19 +28,19 @@ class Admin::StatusController < Admin::BaseController
 
   def update
     if@Status.update(status_params)
-      redirect_to admin_status_path, notice: 'статус успешно изменен'
+      redirect_to admin_status_path, notice: I18n.t('status.status_updated')
     else
       breadcrumb_update
-      flash.now[:alert] = 'не удалось изменить статус'
+      flash.now[:alert] = I18n.t('status.do_not_update_status')
       render :edit
     end
   end
 
   def destroy
     if @Status.destroy
-      redirect_to admin_status_path, notice: 'статус удален'
+      redirect_to admin_status_path, notice: I18n.t('status.status_destroy')
     else
-      redirect_to admin_status_path, alert: 'не удалось'
+      redirect_to admin_status_path, alert: I18n.t('do_not')
 
     end
   end
@@ -50,7 +48,7 @@ class Admin::StatusController < Admin::BaseController
   private
 
   def breadcrumb_update
-    add_breadcrumb "изменить '#{@Status.name}'"  ,[:edit, :admin, @Status ]
+    add_breadcrumb I18n.t('change_name:', name: @Status.name), [:edit, :admin, @Status]
   end
 
   def set_status

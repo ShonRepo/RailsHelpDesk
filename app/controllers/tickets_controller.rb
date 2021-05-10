@@ -3,17 +3,17 @@ class TicketsController < BaseController
   before_action :set_ticket, only: [ :edit, :update, :destroy, :show, :create_stage]
   before_action :lock_ticket, only: [ :show, :edit, :update ]
   def index
-    add_breadcrumb "Найти мою заявку", :tickets_index_path
+    add_breadcrumb I18n.t('ticket.search_my_ticket'), :tickets_index_path
     @main_menu[:myticket][:active] = true
   end
 
   def search
-    @Ticket = Ticket.where("uuid = :uuid", {uuid: params[:search]})
-      if @Ticket.count() > 0
-        cookies[:id] = @Ticket.first[:id]
-        redirect_to tickets_show_path(@Ticket.first)
+    @Ticket = Ticket.find_by(uuid: params[:search])
+      if @Ticket.present?
+        cookies[:id] = @Ticket[:id]
+        redirect_to tickets_show_path(@Ticket)
       else
-        flash.now[:alert] = 'Такой заявки не существует'
+        flash.now[:alert] = I18n.t('ticket.ticket_do_not_exist')
         render :index
       end
   end
@@ -21,13 +21,13 @@ class TicketsController < BaseController
   def new
     @Ticket = Ticket.new
     @main_menu[:newticket][:active] = true
-    add_breadcrumb "новая заявка", tickets_new_path, title: 'Заявки'
+    add_breadcrumb I18n.t('ticket.new_ticket'), tickets_new_path, title: 'Заявки'
   end
 
   def show
     @main_menu[:myticket][:active] = true
-    add_breadcrumb "Найти мою заявку", :tickets_index_path
-    add_breadcrumb "Моя заявка", :tickets_show_path
+    add_breadcrumb I18n.t('ticket.search_my_ticket'), :tickets_index_path
+    add_breadcrumb I18n.t('ticket.my_ticket'), :tickets_show_path
   end
 
   def create_stage
@@ -35,37 +35,42 @@ class TicketsController < BaseController
   end
 
   def edit
-
+    breadcrumb_update
   end
 
   def create
     if Ticket.where(ticket_params)
       @Ticket = Ticket.new(ticket_params)
       @Ticket[:uuid] = SecureRandom.hex(10)
-      @Ticket[:operator_id] = 0;
-      @Ticket[:status_id] = 2;
+      @Ticket[:operator_id] = 0
+      @Ticket[:status_id] = 2
 
-      if @Ticket.save
-        cookies[:id] = @Ticket.id 
-        redirect_to stage_path(@Ticket), notice: 'Добавьте описание'
+      if Confirmed.find_by(email: ticket_params[:email], enable: true).present?
+        if @Ticket.save
+          cookies[:id] = @Ticket.id
+          redirect_to stage_path(@Ticket), notice: I18n.t('add_discription')
+        else
+          add_breadcrumb I18n.t('ticket.new_ticket'), tickets_new_path, title: 'Заявки'
+          flash.now[:alert] = I18n.t('ticket.do_not_create')
+          @main_menu[:newticket][:active] = true
+          render :new
+        end
       else
-        add_breadcrumb "новая заявка", tickets_new_path, title: 'Заявки'
-        flash.now[:alert] = 'не удаось создать заявку'
-        @main_menu[:newticket][:active] = true
+        flash.now[:alert] = I18n.t('ticket.email_not_in_white_list')
         render :new
       end
     else
-      flash.now[:alert] = 'не удалось создать заявку'
+      flash.now[:alert] = I18n.t('ticket.do_not_create')
       render :new
     end
   end
 
   def update
     if @Ticket.update(ticket_params)
-      redirect_to ticket_path(@Ticket), notice: 'Заявка успешно изменена'
+      redirect_to ticket_path(@Ticket), notice: I18n.t('ticket.ticket_changed_successfully')
     else
       breadcrumb_update
-      flash.now[:alert] = 'не удалось изменить заявку'
+      flash.now[:alert] = I18n.t('ticket.do_not_edit_ticket')
       render :edit
     end
   end
@@ -73,17 +78,16 @@ class TicketsController < BaseController
   private
 
   def breadcrumb_update
-    add_breadcrumb "изменить '#{@Ticket.title}'"  , [:edit, :admin, @Ticket ]
+    add_breadcrumb I18n.t('change_name', name: @Ticket.title), [:edit, :admin, @Ticket]
   end
 
   def set_ticket
     @Ticket = Ticket.find(params[:id])
-
   end
 
   def lock_ticket
     if cookies[:id] != params[:id]
-      redirect_to root_path, alert: 'Это не ваша заявка'
+      redirect_to root_path, alert: I18n.t('ticket.this_not_your_ticket')
     end
   end
 
@@ -92,7 +96,6 @@ class TicketsController < BaseController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:title,:email,:body,:type_id,:status_id,:operator_id)
+    params.require(:ticket).permit(:title, :email, :body, :type_id, :status_id, :operator_id)
   end
-
 end

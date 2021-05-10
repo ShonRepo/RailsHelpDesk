@@ -14,7 +14,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
   ul.nav.navbar-nav.navbar-right
     - if !current_operator
       li.dropdown
-        = link_to 'Войти', new_operator_session_path
+        = link_to I18n.t('log_in'), new_operator_session_path
     - if current_operator
         li.dropdown
           a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"

@@ -25,7 +25,7 @@
       - else
         = link_to operator_take_path(ticket), class: 'btn btn-outline-primary btn-sm tag-tooltip',
                         :data => {:toggle=>"tooltip"},
-                        'data-original-title' => "Принять заявку",
+                        'data-original-title' => I18n.t('ticket.accept_ticket', name: ''),
                         'data-placement' => 'bottom'
           = octicon "link-external", :height => 32,  :class => "right left", :"aria-label" => "hi"
 -else
@@ -54,7 +54,7 @@
         - else
           = link_to operator_take_path(ticket), class: 'btn btn-outline-primary btn-sm tag-tooltip',
                           :data => {:toggle=>"tooltip"},
-                          'data-original-title' => "Принять заявкуку",
+                          'data-original-title' => I18n.t('ticket.accept_ticket', name: ''),
                           'data-placement' => 'bottom'
             = octicon "link-external", :height => 32,  :class => "right left", :"aria-label" => "hi"
   -else
@@ -83,6 +83,6 @@
         - else
           = link_to operator_take_path(ticket), class: 'btn btn-outline-primary btn-sm tag-tooltip',
                           :data => {:toggle=>"tooltip"},
-                          'data-original-title' => "Принять заявку",
+                          'data-original-title' => I18n.t('ticket.accept_ticket', name: ''),
                           'data-placement' => 'bottom'
             = octicon "link-external", :height => 32,  :class => "right left", :"aria-label" => "hi"

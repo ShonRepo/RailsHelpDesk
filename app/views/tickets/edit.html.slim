@@ -1,2 +1,2 @@
-h1 Изменить заявку '#{@Ticket.title}'
+h1= I18n.t('ticket.edit_ticket_name', name: @Ticket.title)
 = render 'form'

@@ -1,4 +1,4 @@
-h2 Восстановить пароль
+h2= I18n.t('login.restore_password')
 = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   = f.error_notification
   .form-inputs
@@ -7,7 +7,7 @@ h2 Восстановить пароль
       autofocus: true,
       input_html: { autocomplete: "email" }
   .form-actions
-    = f.button :submit, "Отправить инструкции для изменения пароля"
-    = link_to 'Отмена', new_operator_session_path, class: 'btn btn-outline-dark'
+    = f.button :submit, I18n.t('login.send_instruction')
+    = link_to I18n.t('cancel'), new_operator_session_path, class: 'btn btn-outline-dark'
     
 = render "devise/shared/links"

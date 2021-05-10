@@ -3,11 +3,11 @@
   = f.input :first_name ,label: 'имя'
   = f.input :last_name ,label: 'фамилия'
   = f.input :email
-  = f.input :password , label: 'пароль'
+  = f.input :password , label: I18n.t('login.password')
   = f.input :password_confirmation , label: 'повторите пароль'
   .btn_box
-    = f.button :submit, 'Сохранить', class: 'btn btn-outline-success tag-tooltip',
+    = f.button :submit, I18n.t('save'), class: 'btn btn-outline-success tag-tooltip',
                     :data => {:toggle=>"tooltip"},
-                    'data-original-title' => "Сохранить изменения",
+                    'data-original-title' => I18n.t('save_changes'),
                     'data-placement' => 'bottom'
-    = link_to 'Отмена', operator_indexthis_path, class: 'btn btn-outline-dark'
+    = link_to I18n.t('cancel'), operator_indexthis_path, class: 'btn btn-outline-dark'

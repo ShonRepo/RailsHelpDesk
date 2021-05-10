@@ -16,5 +16,5 @@ h2 Изменить пароль
       input_html: { autocomplete: "new-password" }
   .form-actions
     = f.button :submit, "Изменить мой пароль"
-    = link_to 'Отмена', new_operator_session_path, class: 'btn btn-outline-dark'
+    = link_to I18n.t('cancel'), new_operator_session_path, class: 'btn btn-outline-dark'
 = render "devise/shared/links"

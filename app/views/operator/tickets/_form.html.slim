@@ -1,14 +1,14 @@
 = simple_form_for [:operator,@Ticket ] do |f|
-  = f.input :title ,label: 'Проблема'
+  = f.input :title ,label: I18n.t('ticket.problem')
   = f.input :email
-  = f.association :type, collection: Type.all.decorate, label_method: :type_number, label: 'Тип'
+  = f.association :type, collection: Type.all.decorate, label_method: :type_number, label: I18n.t('ticket.type')
   - if @Ticket.persisted?
     - if @Ticket.body?
       .card
         p #{ @Ticket.body.html_safe}
   .btn_box
-    = f.button :submit , 'Продолжить' , class: 'btn btn-outline-success tag-tooltip',
+    = f.button :submit , I18n.t('continue') , class: 'btn btn-outline-success tag-tooltip',
                     :data => {:toggle=>"tooltip"},
-                    'data-original-title' => "Сохранить данные",
+                    'data-original-title' => I18n.t('save_data'),
                     'data-placement' => 'bottom'
-    = link_to 'Отмена', operator_indexthis_path, class: 'btn btn-outline-dark'
+    = link_to I18n.t('cancel'), operator_indexthis_path, class: 'btn btn-outline-dark'

@@ -1,4 +1,4 @@
-h1 Добро пожаловать!
-= link_to 'Создать заявку', tickets_new_path
+h1 = I18n.t('welcome')
+= link_to I18n.t('ticket.create_ticket'), tickets_new_path
 br
-= link_to 'Просмотреть мою заявку', tickets_index_path
+= link_to I18n.t('ticket.show_my_ticket'), tickets_index_path

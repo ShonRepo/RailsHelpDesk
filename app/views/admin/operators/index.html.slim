@@ -1,4 +1,4 @@
-h1 Операторы
+h1 = I18n.t('operator.operators')
 
 
 = link_to 'Новый оператор', new_admin_operator_path, class: 'btn float-right btn-outline-success tag-tooltip',
@@ -9,8 +9,8 @@ table.table
   thead
     tr
       th scope="col"  #
-      th scope="col"  имя
-      th scope="col"  фамилия
+      th scope="col"= I18n.t('operator.first_name')
+      th scope="col"= I18n.t('operator.last_name')
       th scope="col"  Email
       th scope="col"
   tbody

@@ -1,16 +1,17 @@
-= link_to 'Назад', operator_indexthis_path, class: 'btn btn-outline-dark float-right tag-tooltip',
+= link_to I18n.t('back'), operator_indexthis_path, class: 'btn btn-outline-dark float-right tag-tooltip',
                 :data => {:toggle=>"tooltip"},
                 'data-original-title' => "Вернуться к списку моих заявок",
                 'data-placement' => 'bottom'
-= link_to 'Изменить', [:edit, :operator, @Ticket ], class: 'btn btn-outline-info float-right tag-tooltip',
+= link_to I18n.t('change'), [:edit, :operator, @Ticket ], class: 'btn btn-outline-info float-right tag-tooltip',
                 :data => {:toggle=>"tooltip"},
-                'data-original-title' => "Изменить заявку",
+                'data-original-title' => I18n.t('ticket.edit_ticket'),
                 'data-placement' => 'bottom'
-h1 Заявка: #{@Ticket.title}
+h5= I18n.t('ticket.uuid', uuid:  @Ticket.uuid)
+h1= I18n.t('ticket.ticket', name: @Ticket.title)
 hr
-h2 Тип: #{@Ticket.type.name}
+h2 = I18n.t('ticket.type_text', type: @Ticket.type.name)
 hr
-h6 подробная информация
+h6= I18n.t('detailed_information')
 - if @Ticket.body?
   p #{@Ticket.body.html_safe}
 

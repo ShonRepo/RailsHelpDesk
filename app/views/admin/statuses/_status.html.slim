@@ -5,11 +5,11 @@ tr
     .btn-group role="group"
       = link_to [ :edit, :admin, status ], class: 'btn btn-outline-primary btn-sm tag-tooltip',
                       :data => {:toggle=>"tooltip"},
-                      'data-original-title' => "Изменить статус заявки",
+                      'data-original-title' => I18n.t('status.update'),
                       'data-placement' => 'bottom'
         = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
 
       = link_to  [ :admin, status ], class: 'btn btn-outline-danger btn-sm tag-tooltip',data: {confirm: "хотите удалить '#{status.name}'", :toggle=>"tooltip"},
-      'data-original-title' => "Удалить статус заявки",
+      'data-original-title' => I18n.t('status.delete'),
       'data-placement' => 'bottom', method: :delete
-        = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"
+        = octicon "trash", :height => 32,  :class => "right left", :"aria-label" => "hi"

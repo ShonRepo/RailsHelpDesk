@@ -1,7 +1,7 @@
-h1 Принять заявку '#{@Ticket.title}'?
-h6 Заявка создана в #{@Ticket.created_at}
+h1= I18n.t('ticket.accept_ticket', name: @Ticket.title)
+h6= I18n.t('ticket.ticket_time_created', created_at: @Ticket.created_at)
 hr
-p Подробная информация о заявке
+p= I18n.t('detailed_information')
 - if @Ticket.body?
   p #{@Ticket.body.html_safe}
 = render 'take'

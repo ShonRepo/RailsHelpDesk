@@ -14,8 +14,8 @@ class Operator::BaseController < ApplicationController
   end
 
   def set_main_menu
-    @main_menu = {  newticket: {name: 'Новая заявка',path: new_operator_ticket_path },
-                    allticket: {name: 'Доступные заявки',path: operator_tickets_path },
-                    meticket: {name: 'Мои заявки',path: operator_indexthis_path } }
+    @main_menu = {  newticket: {name: I18n.t('ticket.new_ticket'), path: new_operator_ticket_path },
+                    allticket: {name: I18n.t('ticket.available_ticket'),path: operator_tickets_path },
+                    meticket: {name: I18n.t('ticket.all_my_ticket'), path: operator_indexthis_path } }
   end
 end

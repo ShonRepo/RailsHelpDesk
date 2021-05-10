@@ -11,7 +11,7 @@ tr
                       'data-placement' => 'bottom'
         = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
 
-      = link_to  [ :admin, operator ], class: 'btn btn-outline-danger btn-sm tag-tooltip',data: {confirm: "хотите удалить '#{operator.last_name}'", :toggle=>"tooltip"},
-      'data-original-title' => "Удалить оператора",
+      = link_to  [ :admin, operator ], class: 'btn btn-outline-danger btn-sm tag-tooltip',data: {confirm: I18n.t('want_delete', name: operator.last_name), :toggle=>"tooltip"},
+      'data-original-title' => I18n.t('operator.delete'),
       'data-placement' => 'bottom', method: :delete
-        = octicon "trashcan", :height => 32,  :class => "right left", :"aria-label" => "hi"
+        = octicon "trash", :height => 32,  :class => "right left", :"aria-label" => "hi"

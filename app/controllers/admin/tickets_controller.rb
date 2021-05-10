@@ -8,7 +8,7 @@ class Admin::TicketsController < Admin::BaseController
 
   def new
       @Ticket = Ticket.new
-      add_breadcrumb "новая заявка", new_admin_ticket_path, title: 'Заявки'
+      add_breadcrumb I18n.t('ticket.new_ticket'), new_admin_ticket_path, title: 'Заявки'
   end
 
   def create
@@ -16,14 +16,14 @@ class Admin::TicketsController < Admin::BaseController
       @Ticket = Ticket.new(ticket_params)
       @Ticket[:uuid] = SecureRandom.hex(10)
       if@Ticket.save
-        redirect_to admin_stage_path(@Ticket), notice: 'Добавьте описание'
+        redirect_to admin_stage_path(@Ticket), notice: I18n.t('add_discription')
       else
-        add_breadcrumb "новая заявка", new_admin_ticket_path, title: 'Заявки'
-        flash.now[:alert] = 'не удалось создать заявку'
+        add_breadcrumb I18n.t('ticket.new_ticket'), new_admin_ticket_path, title: 'Заявки'
+        flash.now[:alert] = I18n.t('ticket.do_not_create')
         render :new
       end
     else
-      flash.now[:alert] = 'не удалось создать заявку'
+      flash.now[:alert] = I18n.t('ticket.do_not_create')
       render :new
     end
 
@@ -44,19 +44,19 @@ class Admin::TicketsController < Admin::BaseController
 
   def update
     if@Ticket.update!(ticket_params)
-      redirect_to admin_tickets_path, notice: 'Заявка успешно изменена'
+      redirect_to admin_tickets_path, notice: I18n.t('ticket.ticket_changed_successfully')
     else
       breadcrumb_update
-      flash.now[:alert] = 'не удалось изменить заявку'
+      flash.now[:alert] = I18n.t('ticket.do_not_edit_ticket')
       render :edit
     end
   end
 
   def destroy
     if @Ticket.destroy
-      redirect_to admin_tickets_path, notice: 'Заявка удалена'
+      redirect_to admin_tickets_path, notice: I18n.t('ticket.delited_ticket')
     else
-      redirect_to admin_tickets_path, alert: 'не удалось'
+      redirect_to admin_tickets_path, alert: I18n.t('do_not')
 
     end
   end
@@ -64,7 +64,7 @@ class Admin::TicketsController < Admin::BaseController
   private
 
   def breadcrumb_update
-    add_breadcrumb "изменить '#{@Ticket.title}'"  , [:edit, :admin, @Ticket ]
+    add_breadcrumb I18n.t('status.statuses', name: @Ticket.title)  , [:edit, :admin, @Ticket ]
   end
 
   def set_ticket
