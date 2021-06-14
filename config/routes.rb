@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get 'tickets/update'
     get 'tickets/delete'
     root to: 'pages#start'
+    resources :faqs, only: %i[show]
 
     resources :answers, only: %i[create]
     resources :tickets do
@@ -53,6 +54,9 @@ Rails.application.routes.draw do
       resources :admins, except: :show
       resources :statuses, except: :show
       resources :confirmeds, except: :show
+      resources :faqs do
+        resources :tinymce_images, only: :create, owner: 'faq'
+      end
       put 'confirmeds/:id/switch', to: 'confirmeds#switch', as: 'confirmeds_switch'
       resources :operators, except: :show
       resources :tickets, only: [] do

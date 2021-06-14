@@ -1,20 +1,16 @@
-class PagesController < BaseController
-  # add_breadcrumb I18n.t('main'), :root_path
+# frozen_string_literal: true
 
+# Контроллер главного меню пользователя
+class PagesController < BaseController
+  # Стартовая страница
   def start
+    @faqs = Faq.order(count_reads: :desc).page params[:page]
   end
 
   private
 
-  def set_confirmed
-    @Confirmed = Confirmed.find(params[:id])
-  end
-
+  # Выделить пункт в меню
   def set_active_main_menu_item
     @main_menu[:main][:active] = true
-  end
-
-  def confirmed_params
-    params.require(:confirmed).permit(:email, :active)
   end
 end

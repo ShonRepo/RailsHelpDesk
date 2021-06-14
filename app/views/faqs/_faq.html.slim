@@ -1,0 +1,11 @@
+tr
+  td= faq.id
+  td= faq.title
+  td= faq.author.last_name
+  td
+    .btn-group role="group"
+      = link_to faq_path(faq), class: 'btn btn-outline-info btn-sm tag-tooltip',
+                  :data => {:toggle=>"tooltip"},
+                  'data-original-title' => I18n.t('faqs.show'),
+                  'data-placement' => 'bottom'
+        = octicon "repo-push", :height => 32,  :class => "right left", :"aria-label" => "hi"

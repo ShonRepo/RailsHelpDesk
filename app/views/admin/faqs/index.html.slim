@@ -1,0 +1,19 @@
+h1 = I18n.t('faqs.faqs')
+= link_to I18n.t('faqs.new'), new_admin_faq_path, class: 'btn float-right btn-outline-success tag-tooltip',
+                :data => {:toggle=>"tooltip"},
+                'data-original-title' => I18n.t('faqs.add'),
+                'data-placement' => 'bottom'
+
+table.table
+  thead
+    tr
+      th scope="col"  #
+      th scope="col"= I18n.t('faqs.title')
+      th scope="col"= I18n.t('faqs.author')
+      th scope="col"=  I18n.t('faqs.updated_at')
+      th scope="col"
+    tbody
+      =render @faqs
+= paginate @faqs, theme: 'twitter-bootstrap-4',
+                  pagination_class: "pagination-sm",
+                  nav_class: "d-inline-b"

@@ -1,0 +1,13 @@
+h1= I18n.t('faqs.faqs')
+table.table
+  thead
+    tr
+      th scope="col"  #
+      th scope="col"= I18n.t('faqs.title')
+      th scope="col"= I18n.t('faqs.author')
+      th scope="col"
+    tbody
+      =render @faqs
+= paginate @faqs, theme: 'twitter-bootstrap-4',
+                  pagination_class: "pagination-sm",
+                  nav_class: "d-inline-b"

@@ -1,3 +1,4 @@
+# Декоратор данных администратора
 class AdminDecorator < ApplicationDecorator
   delegate_all
 

@@ -1,3 +1,4 @@
+# Декоратор типа
 class TypeDecorator < ApplicationDecorator
   delegate_all
 

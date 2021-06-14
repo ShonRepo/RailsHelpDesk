@@ -1,0 +1,11 @@
+  = link_to I18n.t('back'), admin_faqs_path, class: 'btn btn-outline-dark float-right'
+  = link_to I18n.t('change'), [:edit, :admin, @faq], class: 'btn btn-outline-info float-right tag-tooltip',
+                  :data => {:toggle=>"tooltip"},
+                  'data-original-title' => I18n.t('faqs.edit'),
+                  'data-placement' => 'bottom'
+  h1= I18n.t('faqs.faqs_faqs', name: @faq.title)
+
+  hr
+  h6= I18n.t('detailed_information')
+  - unless @faq.text.blank?
+    p #{@faq.text.html_safe}

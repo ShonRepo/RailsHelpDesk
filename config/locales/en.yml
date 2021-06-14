@@ -63,6 +63,7 @@ en:
     do_not_created: 'Failed to add operator'
     add: 'Add operator'
     save: 'Save operator'
+    repeat_password: 'Repeat password'
     delete: 'Delete operator'
     create: 'Create operator'
     first_name: 'First Name'

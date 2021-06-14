@@ -1,3 +1,4 @@
+# Декоратор данных оператора
 class OperatorDecorator < ApplicationDecorator
   delegate_all
 

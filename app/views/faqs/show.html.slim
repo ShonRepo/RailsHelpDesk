@@ -1,0 +1,7 @@
+  = link_to I18n.t('back'), root_path, class: 'btn btn-outline-dark float-right'
+  h1= I18n.t('faqs.faqs_faqs', name: @faq.title)
+
+  hr
+  h6= I18n.t('detailed_information')
+  - unless @faq.text.blank?
+    p #{@faq.text.html_safe}

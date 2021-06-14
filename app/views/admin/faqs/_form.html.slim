@@ -1,0 +1,15 @@
+= simple_form_for [:admin, @faq] do |f|
+  = f.input :title, label: I18n.t('faqs.title')
+  - if @faq.persisted?
+    p= I18n.t('ticket.describe_the_problem')
+    = f.text_area :text, class: 'tinymce', rows: 20, cols: 120
+    = tinymce :alternate, language: session[:locale], uploadimage_form_url: admin_ticket_tinymce_images_path(@faq)
+  .btn_box
+    = f.button :submit, I18n.t('save'), class: 'btn btn-outline-success tag-tooltip',
+                    :data => {:toggle=>"tooltip"},
+                    'data-original-title' => I18n.t('faqs.create'),
+                    'data-placement' => 'bottom'
+    = link_to I18n.t('cancel'), admin_faqs_path, class: 'btn btn-outline-dark'
+    = link_to I18n.t('delete') ,[:admin, @faq], class: 'btn btn-outline-danger tag-tooltip',data: {confirm: I18n.t('want_delete', name: @faq.title), :toggle=>"tooltip"},
+    'data-original-title' => I18n.t('faq.delete'),
+    'data-placement' => 'bottom', method: :delete if @faq.persisted?

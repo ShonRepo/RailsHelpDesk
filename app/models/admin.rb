@@ -1,3 +1,4 @@
+# Модель данных администратора
 class Admin < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable,:registerable, :recoverable, :lockable, :timeoutable, :trackable and :omniauthable

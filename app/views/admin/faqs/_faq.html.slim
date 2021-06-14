@@ -1,0 +1,21 @@
+tr
+  td= faq.id
+  td= faq.title
+  td= faq.author.last_name
+  td
+    .btn-group role="group"
+      = link_to [:admin, faq], class: 'btn btn-outline-info btn-sm tag-tooltip',
+                  :data => {:toggle=>"tooltip"},
+                  'data-original-title' => I18n.t('faqs.show'),
+                  'data-placement' => 'bottom'
+        = octicon "repo-push", :height => 32,  :class => "right left", :"aria-label" => "hi"
+      = link_to [:edit, :admin, faq], class: 'btn btn-outline-primary btn-sm tag-tooltip',
+                      :data => { :toggle=>"tooltip" },
+                      'data-original-title' => I18n.t('faqs.edit'),
+                      'data-placement' => 'bottom'
+        = octicon "pencil", :height => 32,  :class => "right left", :"aria-label" => "hi"
+
+      = link_to  [ :admin, faq ], class: 'btn btn-outline-danger btn-sm tag-tooltip',data: {confirm: I18n.t('want_delete', name: faq.title), :toggle=>"tooltip"},
+      'data-original-title' => I18n.t('faqs.delete'),
+      'data-placement' => 'bottom', method: :delete
+        = octicon "trash", :height => 32,  :class => "right left", :"aria-label" => "hi"

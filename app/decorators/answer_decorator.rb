@@ -1,3 +1,4 @@
+# Декоратор Времени отправки ответа
 class AnswerDecorator < ApplicationDecorator
   delegate_all
 

@@ -1,3 +1,4 @@
+# Декоратор данных заявки
 class TicketDecorator < ApplicationDecorator
   delegate_all
 

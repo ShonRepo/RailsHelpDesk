@@ -1,6 +1,6 @@
 = simple_form_for [:admin, @Operator] do |f|
 
-  = f.input :first_name ,label: I18n.t('operator.fitst_name')
+  = f.input :first_name ,label: I18n.t('operator.first_name')
   = f.input :last_name ,label: I18n.t('operator.last_name')
   = f.input :email
   = f.input :password , label: I18n.t('login.password')
@@ -11,6 +11,6 @@
                     'data-original-title' => "Создать оператора",
                     'data-placement' => 'bottom'
     = link_to I18n.t('cancel'), admin_operators_path, class: 'btn btn-outline-dark'
-    = link_to I18n.t('delete') ,[ :admin, @Operator ], class: 'btn btn-outline-danger tag-tooltip',data: {confirm: "хотите удалить '#{@Operator.last_name}'", :toggle=>"tooltip"},
+    = link_to I18n.t('delete') ,[ :admin, @Operator ], class: 'btn btn-outline-danger tag-tooltip',data: { confirm: I18n.t('want_delete', name: @Operator.last_name), :toggle=>"tooltip"},
     'data-original-title' => I18n.t('operator.delete'),
     'data-placement' => 'bottom', method: :delete if @Operator.persisted?
